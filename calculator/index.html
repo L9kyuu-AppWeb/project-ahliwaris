@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Waris Islam - FaraidhKu</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: { colors: { emerald: { 50: '#ecfdf5', 600: '#059669', 800: '#065f46' } }, fontFamily: { sans: ['Inter', 'sans-serif'], serif: ['Amiri', 'serif'] } }
+            }
+        }
+    </script>
+    <style>
+        .chart-container {
+            position: relative;
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800 font-sans antialiased">
+    <!-- Navbar -->
+    <nav class="bg-white sticky top-0 z-50 border-b border-gray-100 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+            <a href="../index.html" class="flex items-center gap-2">
+                <span class="text-2xl text-emerald-600">☪️</span>
+                <span class="font-bold text-xl tracking-tight text-gray-900">Faraidh<span
+                        class="text-emerald-600">Ku</span></span>
+            </a>
+            <div class="flex space-x-4">
+                <a href="../education/index.html" class="text-gray-500 hover:text-emerald-600">Pelajari Faraidh</a>
+                <a href="#" class="text-emerald-600 font-medium">Kalkulator</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-12 gap-8">
+
+            <!-- Input Form -->
+            <div class="lg:col-span-5 space-y-6">
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+                    <h2 class="text-xl font-bold text-gray-900 mb-6 flex items-center gap-2">
+                        <span class="bg-emerald-100 p-2 rounded-lg text-emerald-700">📝</span> Data Warisan
+                    </h2>
+
+                    <form id="calculatorForm" class="space-y-6">
+                        <!-- Harta & Deductions (Priority Order) -->
+                        <div class="bg-emerald-50 p-4 rounded-xl border border-emerald-100 space-y-4">
+                            <h3 class="font-bold text-emerald-800 flex items-center gap-2">
+                                <span
+                                    class="bg-white rounded-full w-6 h-6 flex items-center justify-center text-xs border border-emerald-200">1</span>
+                                Hitung Harta Bersih
+                            </h3>
+
+                            <!-- Total Aset -->
+                            <div>
+                                <label class="block text-xs font-medium text-gray-600 mb-1">Total Aset (Tabungan,
+                                    Properti, Emas, dll)</label>
+                                <div class="relative">
+                                    <input type="number" id="inputAset"
+                                        class="w-full px-3 py-2 rounded border border-gray-300 focus:ring-1 focus:ring-emerald-500 font-mono text-sm"
+                                        placeholder="0" min="0">
+                                </div>
+                            </div>
+
+                            <!-- Deductions -->
+                            <div class="space-y-3 pl-2 border-l-2 border-gray-200">
+                                <div>
+                                    <label class="block text-xs font-medium text-gray-500 mb-1">(-) Biaya Pengurusan
+                                        Jenazah</label>
+                                    <input type="number" id="inputJenazah"
+                                        class="w-full px-3 py-2 rounded border border-gray-300 focus:ring-1 focus:ring-rose-500 font-mono text-sm"
+                                        placeholder="0" min="0">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-medium text-gray-500 mb-1">(-) Hutang (Kepada Allah
+                                        & Manusia)</label>
+                                    <input type="number" id="inputHutang"
+                                        class="w-full px-3 py-2 rounded border border-gray-300 focus:ring-1 focus:ring-rose-500 font-mono text-sm"
+                                        placeholder="0" min="0">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-medium text-gray-500 mb-1">(-) Wasiat (Maks 1/3
+                                        Sisa)</label>
+                                    <input type="number" id="inputWasiat"
+                                        class="w-full px-3 py-2 rounded border border-gray-300 focus:ring-1 focus:ring-rose-500 font-mono text-sm"
+                                        placeholder="0" min="0">
+                                    <p id="wasiatWarning" class="text-[10px] text-rose-500 mt-1 hidden">Wasiat melebihi
+                                        1/3 dari sisa harta!</p>
+                                </div>
+                            </div>
+
+                            <!-- Net Result -->
+                            <div class="pt-3 border-t border-emerald-200">
+                                <label class="block text-xs font-bold text-emerald-800 mb-1">Total Harta Waris
+                                    (Netto)</label>
+                                <div class="relative">
+                                    <input type="number" id="harta"
+                                        class="w-full px-3 py-2 rounded bg-white border border-emerald-300 font-bold text-emerald-700 font-mono"
+                                        readonly value="0">
+                                    <div
+                                        class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none text-emerald-500 text-xs font-bold">
+                                        IDR</div>
+                                </div>
+                                <div id="hartaFormatted" class="text-right text-xs font-mono text-emerald-600 mt-1 h-4">
+                                    Rp 0</div>
+                            </div>
+                        </div>
+
+                        <!-- Who Died -->
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Siapa yang Meninggal?</label>
+                            <div class="grid grid-cols-2 gap-4">
+                                <label class="cursor-pointer">
+                                    <input type="radio" name="gender" value="suami" class="peer sr-only" checked>
+                                    <div
+                                        class="p-3 border rounded-lg text-center peer-checked:bg-emerald-50 peer-checked:border-emerald-500 peer-checked:text-emerald-700 transition-all hover:bg-gray-50 bg-white">
+                                        👨 Suami
+                                    </div>
+                                </label>
+                                <label class="cursor-pointer">
+                                    <input type="radio" name="gender" value="istri" class="peer sr-only">
+                                    <div
+                                        class="p-3 border rounded-lg text-center peer-checked:bg-emerald-50 peer-checked:border-emerald-500 peer-checked:text-emerald-700 transition-all hover:bg-gray-50 bg-white">
+                                        👩 Istri
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Heirs -->
+                        <div class="space-y-4">
+                            <label class="block text-sm font-medium text-gray-700">Ahli Waris yang Masih Hidup</label>
+
+                            <!-- Spouse -->
+                            <label
+                                class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer transition-colors bg-white">
+                                <input type="checkbox" id="pasangan"
+                                    class="w-5 h-5 text-emerald-600 rounded focus:ring-emerald-500" checked>
+                                <span class="ml-3 text-gray-700" id="labelPasangan">Istri (Pasangan)</span>
+                            </label>
+
+                            <!-- Parents -->
+                            <div class="grid grid-cols-2 gap-4">
+                                <label
+                                    class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer transition-colors bg-white">
+                                    <input type="checkbox" id=" ayah"
+                                        class="w-5 h-5 text-emerald-600 rounded focus:ring-emerald-500">
+                                    <span class="ml-3 text-gray-700">Ayah</span>
+                                </label>
+                                <label
+                                    class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer transition-colors bg-white">
+                                    <input type="checkbox" id="ibu"
+                                        class="w-5 h-5 text-emerald-600 rounded focus:ring-emerald-500">
+                                    <span class="ml-3 text-gray-700">Ibu</span>
+                                </label>
+                            </div>
+
+                            <!-- Children -->
+                            <div class="bg-gray-50 p-4 rounded-lg space-y-4 border border-gray-100">
+                                <h3 class="text-sm font-medium text-gray-700 border-b border-gray-200 pb-2">Anak Kandung
+                                </h3>
+                                <div>
+                                    <label
+                                        class="block text-xs font-medium text-gray-500 mb-1 uppercase tracking-wide">Anak
+                                        Laki-laki</label>
+                                    <div class="flex items-center gap-3">
+                                        <button type="button" onclick="adjustCount('anakLaki', -1)"
+                                            class="w-8 h-8 rounded-full bg-white border border-gray-300 flex items-center justify-center hover:bg-gray-100 text-gray-600">-</button>
+                                        <input type="number" id="anakLaki" value="0" min="0"
+                                            class="w-16 text-center border-gray-300 rounded-md shadow-sm focus:border-emerald-500 focus:ring-emerald-500"
+                                            readonly>
+                                        <button type="button" onclick="adjustCount('anakLaki', 1)"
+                                            class="w-8 h-8 rounded-full bg-white border border-gray-300 flex items-center justify-center hover:bg-gray-100 text-emerald-600 font-bold">+</button>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label
+                                        class="block text-xs font-medium text-gray-500 mb-1 uppercase tracking-wide">Anak
+                                        Perempuan</label>
+                                    <div class="flex items-center gap-3">
+                                        <button type="button" onclick="adjustCount('anakPerempuan', -1)"
+                                            class="w-8 h-8 rounded-full bg-white border border-gray-300 flex items-center justify-center hover:bg-gray-100 text-gray-600">-</button>
+                                        <input type="number" id="anakPerempuan" value="0" min="0"
+                                            class="w-16 text-center border-gray-300 rounded-md shadow-sm focus:border-emerald-500 focus:ring-emerald-500"
+                                            readonly>
+                                        <button type="button" onclick="adjustCount('anakPerempuan', 1)"
+                                            class="w-8 h-8 rounded-full bg-white border border-gray-300 flex items-center justify-center hover:bg-gray-100 text-emerald-600 font-bold">+</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Extended Heirs: Ancestors & Descendants -->
+                            <div class="bg-gray-50 p-4 rounded-lg space-y-4 border border-gray-100">
+                                <h3 class="text-sm font-medium text-gray-700 border-b border-gray-200 pb-2">Keluarga
+                                    Besar (Leluhur & Cucu/Cicit)</h3>
+
+                                <!-- Ancestors -->
+                                <div class="space-y-2">
+                                    <label class="block text-xs font-medium text-gray-500 uppercase tracking-wide">Kakek
+                                        & Nenek</label>
+                                    <div class="grid grid-cols-2 gap-3">
+                                        <label
+                                            class="flex items-center p-2 bg-white border rounded hover:bg-emerald-50 cursor-pointer">
+                                            <input type="checkbox" id="kakek" class="w-4 h-4 text-emerald-600 rounded">
+                                            <div class="ml-2 text-sm leading-tight">
+                                                <span class="block font-medium">Kakek</span>
+                                                <span class="text-[10px] text-gray-400">Ayah dari Ayah</span>
+                                            </div>
+                                        </label>
+                                        <label
+                                            class="flex items-center p-2 bg-white border rounded hover:bg-emerald-50 cursor-pointer">
+                                            <input type="checkbox" id="nenekAyah"
+                                                class="w-4 h-4 text-emerald-600 rounded">
+                                            <div class="ml-2 text-sm leading-tight">
+                                                <span class="block font-medium">Nenek (Ayah)</span>
+                                                <span class="text-[10px] text-gray-400">Ibu dari Ayah</span>
+                                            </div>
+                                        </label>
+                                        <label
+                                            class="flex items-center p-2 bg-white border rounded hover:bg-emerald-50 cursor-pointer">
+                                            <input type="checkbox" id="nenekIbu"
+                                                class="w-4 h-4 text-emerald-600 rounded">
+                                            <div class="ml-2 text-sm leading-tight">
+                                                <span class="block font-medium">Nenek (Ibu)</span>
+                                                <span class="text-[10px] text-gray-400">Ibu dari Ibu</span>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <!-- Descendants -->
+                                <div class="space-y-2 pt-2">
+                                    <label class="block text-xs font-medium text-gray-500 uppercase tracking-wide">Cucu
+                                        (Dari Anak Laki-laki)</label>
+                                    <div class="grid grid-cols-2 gap-3">
+                                        <div>
+                                            <span class="text-[10px] text-gray-400 mb-1 block">Cucu Laki-laki</span>
+                                            <div class="flex items-center gap-2">
+                                                <button type="button" onclick="adjustCount('cucuLaki', -1)"
+                                                    class="w-6 h-6 rounded bg-white border hover:bg-gray-100 flex items-center justify-center">-</button>
+                                                <input type="number" id="cucuLaki" value="0" min="0"
+                                                    class="w-10 text-center text-sm border-gray-200 rounded" readonly>
+                                                <button type="button" onclick="adjustCount('cucuLaki', 1)"
+                                                    class="w-6 h-6 rounded bg-white border hover:bg-gray-100 flex items-center justify-center text-emerald-600 font-bold">+</button>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <span class="text-[10px] text-gray-400 mb-1 block">Cucu Perempuan</span>
+                                            <div class="flex items-center gap-2">
+                                                <button type="button" onclick="adjustCount('cucuPr', -1)"
+                                                    class="w-6 h-6 rounded bg-white border hover:bg-gray-100 flex items-center justify-center">-</button>
+                                                <input type="number" id="cucuPr" value="0" min="0"
+                                                    class="w-10 text-center text-sm border-gray-200 rounded" readonly>
+                                                <button type="button" onclick="adjustCount('cucuPr', 1)"
+                                                    class="w-6 h-6 rounded bg-white border hover:bg-gray-100 flex items-center justify-center text-emerald-600 font-bold">+</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Siblings -->
+                            <div class="bg-gray-50 p-4 rounded-lg space-y-4 border border-gray-100">
+                                <h3 class="text-sm font-medium text-gray-700 border-b border-gray-200 pb-2">Saudara
+                                    Kandung (Seayah-Seibu)</h3>
+                                <div>
+                                    <label
+                                        class="block text-xs font-medium text-gray-500 mb-1 uppercase tracking-wide">Saudara
+                                        Laki-laki</label>
+                                    <div class="flex items-center gap-3">
+                                        <button type="button" onclick="adjustCount('sdrLaki', -1)"
+                                            class="w-8 h-8 rounded-full bg-white border border-gray-300 flex items-center justify-center hover:bg-gray-100 text-gray-600">-</button>
+                                        <input type="number" id="sdrLaki" value="0" min="0"
+                                            class="w-16 text-center border-gray-300 rounded-md shadow-sm focus:border-emerald-500 focus:ring-emerald-500"
+                                            readonly>
+                                        <button type="button" onclick="adjustCount('sdrLaki', 1)"
+                                            class="w-8 h-8 rounded-full bg-white border border-gray-300 flex items-center justify-center hover:bg-gray-100 text-emerald-600 font-bold">+</button>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label
+                                        class="block text-xs font-medium text-gray-500 mb-1 uppercase tracking-wide">Saudara
+                                        Perempuan</label>
+                                    <div class="flex items-center gap-3">
+                                        <button type="button" onclick="adjustCount('sdrPr', -1)"
+                                            class="w-8 h-8 rounded-full bg-white border border-gray-300 flex items-center justify-center hover:bg-gray-100 text-gray-600">-</button>
+                                        <input type="number" id="sdrPr" value="0" min="0"
+                                            class="w-16 text-center border-gray-300 rounded-md shadow-sm focus:border-emerald-500 focus:ring-emerald-500"
+                                            readonly>
+                                        <button type="button" onclick="adjustCount('sdrPr', 1)"
+                                            class="w-8 h-8 rounded-full bg-white border border-gray-300 flex items-center justify-center hover:bg-gray-100 text-emerald-600 font-bold">+</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button type="submit"
+                            class="w-full py-4 bg-emerald-600 text-white font-bold rounded-xl shadow-lg shadow-emerald-200 hover:bg-emerald-700 transition-all hover:-translate-y-0.5 hover:shadow-xl">
+                            Hitung Pembagian
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Results -->
+            <div class="lg:col-span-7">
+                <div id="resultCard" class="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-gray-100 hidden">
+                    <div class="flex flex-col items-center justify-center mb-10 text-center">
+                        <span class="text-sm text-gray-500 uppercase tracking-widest mb-1">Total Harta Warisan</span>
+                        <h2 id="displayHarta" class="text-3xl sm:text-4xl font-bold text-gray-900 font-serif">Rp 0</h2>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-10 items-start">
+                        <!-- Chart Area -->
+                        <div class="flex flex-col items-center">
+                            <div class="chart-container mb-6">
+                                <svg viewBox="0 0 100 100" class="w-full h-full transform -rotate-90">
+                                    <circle cx="50" cy="50" r="40" fill="transparent" stroke="#f3f4f6"
+                                        stroke-width="20" />
+                                    <!-- Dynamic Segments will be injected here -->
+                                    <g id="chartSegments"></g>
+                                    <!-- Center Text -->
+                                    <text x="50" y="50" text-anchor="middle" dominant-baseline="middle"
+                                        class="text-[8px] fill-gray-400 font-bold"
+                                        transform="rotate(90 50 50)">100%</text>
+                                </svg>
+                            </div>
+                            <div id="chartLegend" class="w-full space-y-2 text-sm">
+                                <!-- Legend items -->
+                            </div>
+                        </div>
+
+                        <!-- Details List -->
+                        <div id="distributionList" class="space-y-3 w-full">
+                            <!-- Result Items -->
+                        </div>
+                    </div>
+
+                    <div id="notesArea"
+                        class="mt-8 p-4 bg-amber-50 border border-amber-100 text-amber-900 rounded-lg text-sm hidden">
+                        <!-- Notes -->
+                    </div>
+                </div>
+
+                <!-- Empty State -->
+                <div id="emptyState"
+                    class="bg-white p-12 rounded-2xl shadow-sm border border-gray-100 text-center h-full flex flex-col items-center justify-center text-gray-400 min-h-[500px]">
+                    <div class="w-24 h-24 bg-gray-50 rounded-full flex items-center justify-center mb-6">
+                        <span class="text-4xl text-gray-300">🧮</span>
+                    </div>
+                    <h3 class="text-lg font-medium text-gray-900 mb-2">Belum Ada Hasil</h3>
+                    <p>Masukkan data harta dan ahli waris di sebelah kiri untuk melihat visualisasi pembagian.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="logic.js"></script>
+    <script>
+        // Calculate Net Estate (Harta Bersih)
+        const inputsCalc = ['inputAset', 'inputJenazah', 'inputHutang', 'inputWasiat'];
+        const inputHarta = document.getElementById('harta');
+        const hartaFormatted = document.getElementById('hartaFormatted'); // Renamed from displayHarta to match old variable name
+        const wasiatWarning = document.getElementById('wasiatWarning');
+
+        function updateNetEstate() {
+            const aset = parseFloat(document.getElementById('inputAset').value) || 0;
+            const jenazah = parseFloat(document.getElementById('inputJenazah').value) || 0;
+            const hutang = parseFloat(document.getElementById('inputHutang').value) || 0;
+            let wasiat = parseFloat(document.getElementById('inputWasiat').value) || 0;
+
+            let afterDebt = aset - jenazah - hutang;
+            if (afterDebt < 0) afterDebt = 0;
+
+            // Wasiat Rule: Max 1/3 of (Aset - Jenazah - Hutang)
+            const maxWasiat = afterDebt / 3;
+
+            if (wasiat > maxWasiat) {
+                wasiatWarning.classList.remove('hidden');
+                // We don't block calculation, but warning is shown. 
+                // In strict calculator, we might cap it, but let's just warn for now or cap it?
+                // Let's cap it for accurate calculation text
+                // wasiat = maxWasiat; 
+            } else {
+                wasiatWarning.classList.add('hidden');
+            }
+
+            // Note: If user insists on high wasiat, we use their input but result might be negative if not careful.
+            // Let's protect the final value
+            let finalHarta = afterDebt - wasiat;
+            if (finalHarta < 0) finalHarta = 0;
+
+            inputHarta.value = finalHarta;
+            hartaFormatted.textContent = formatCurrency(finalHarta); // Use hartaFormatted
+        }
+
+        inputsCalc.forEach(id => {
+            document.getElementById(id).addEventListener('input', updateNetEstate);
+        });
+
+        // Initial calculation on load
+        document.addEventListener('DOMContentLoaded', updateNetEstate);
+
+        // UI Interaction
+        window.adjustCount = (id, delta) => {
+            const el = document.getElementById(id);
+            let val = parseInt(el.value) || 0;
+            val += delta;
+            if (val < 0) val = 0;
+            el.value = val;
+        }
+
+        const genderRadios = document.querySelectorAll('input[name="gender"]');
+        const labelPasangan = document.getElementById('labelPasangan');
+
+        genderRadios.forEach(radio => {
+            radio.addEventListener('change', (e) => {
+                if (e.target.value === 'suami') {
+                    labelPasangan.textContent = "Istri (Pasangan)";
+                } else {
+                    labelPasangan.textContent = "Suami (Pasangan)";
+                }
+            });
+        });
+
+        // Colors for Chart
+        const CHART_COLORS = [
+            '#059669', // Emerald 600
+            '#0d9488', // Teal 600
+            '#0891b2', // Cyan 600
+            '#0284c7', // Sky 600
+            '#2563eb', // Blue 600
+            '#4f46e5', // Indigo 600
+            '#7c3aed', // Violet 600
+            '#db2777', // Pink 600
+        ];
+
+        // Draw Donut Chart
+        function drawChart(distribution, totalHarta) {
+            const svg = document.getElementById('chartSegments');
+            const legend = document.getElementById('chartLegend');
+            svg.innerHTML = '';
+            legend.innerHTML = '';
+
+            let accumulatedPercent = 0;
+            const radius = 40;
+            const circumference = 2 * Math.PI * radius;
+
+            distribution.forEach((item, index) => {
+                const percentage = item.value / totalHarta;
+                if (percentage === 0) return;
+
+                const color = CHART_COLORS[index % CHART_COLORS.length];
+                const dashArray = percentage * circumference;
+                const dashOffset = -1 * accumulatedPercent * circumference; // Negative for clockwise visually correct in rotated SVG
+
+                // SVG Circle Segment
+                const circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+                circle.setAttribute("cx", "50");
+                circle.setAttribute("cy", "50");
+                circle.setAttribute("r", radius);
+                circle.setAttribute("fill", "transparent");
+                circle.setAttribute("stroke", color);
+                circle.setAttribute("stroke-width", "20");
+                circle.setAttribute("stroke-dasharray", `${dashArray} ${circumference}`);
+                circle.setAttribute("stroke-dashoffset", dashOffset);
+                svg.appendChild(circle);
+
+                // Legend Item
+                const legendItem = document.createElement('div');
+                legendItem.className = "flex items-center justify-between group";
+                legendItem.innerHTML = `
+                    <div class="flex items-center gap-2">
+                        <span class="w-3 h-3 rounded-full" style="background-color: ${color}"></span>
+                        <span class="text-gray-600 text-xs sm:text-sm font-medium truncate max-w-[120px]">${item.name}</span>
+                    </div>
+                    <span class="text-gray-900 font-bold text-xs sm:text-sm">${Math.round(percentage * 100)}%</span>
+                `;
+                legend.appendChild(legendItem);
+
+                accumulatedPercent += percentage;
+            });
+        }
+
+        // Form Submit
+        document.getElementById('calculatorForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const inputs = {
+                harta: parseFloat(document.getElementById('harta').value) || 0,
+                gender: document.querySelector('input[name="gender"]:checked').value,
+                pasangan: document.getElementById('pasangan').checked,
+                ayah: document.getElementById(' ayah').checked,
+                ibu: document.getElementById('ibu').checked,
+                anakLaki: parseInt(document.getElementById('anakLaki').value) || 0,
+                anakPerempuan: parseInt(document.getElementById('anakPerempuan').value) || 0,
+                sdrLaki: parseInt(document.getElementById('sdrLaki').value) || 0,
+                sdrPr: parseInt(document.getElementById('sdrPr').value) || 0,
+                // Extended
+                kakek: document.getElementById('kakek').checked,
+                nenekAyah: document.getElementById('nenekAyah').checked,
+                nenekIbu: document.getElementById('nenekIbu').checked,
+                cucuLaki: parseInt(document.getElementById('cucuLaki').value) || 0,
+                cucuPr: parseInt(document.getElementById('cucuPr').value) || 0
+            };
+
+            const result = calculateWarisan(inputs);
+
+            // Show Cards
+            document.getElementById('emptyState').classList.add('hidden');
+            document.getElementById('resultCard').classList.remove('hidden');
+            document.getElementById('displayHarta').textContent = formatCurrency(result.totalHarta);
+
+            const list = document.getElementById('distributionList');
+            list.innerHTML = '';
+
+            result.distribution.forEach((item, index) => {
+                const color = CHART_COLORS[index % CHART_COLORS.length];
+                const row = document.createElement('div');
+                // Premium Card Style
+                row.className = "bg-white border rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden";
+                row.style.borderLeft = `4px solid ${color}`;
+
+                let detailText = "";
+                if (item.perPerson && (item.name.includes("Anak") || item.name.includes("Saudara") || item.name.includes("Cucu") || item.name.includes("Nenek"))) {
+                    detailText = `<div class="text-xs text-gray-500 mt-1">(${formatCurrency(item.perPerson)} / orang)</div>`;
+                }
+
+                row.innerHTML = `
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <div class="text-xs font-bold uppercase tracking-wider text-gray-400 mb-1">${item.shareText}</div>
+                            <h4 class="font-bold text-gray-800 text-sm sm:text-base">${item.name}</h4>
+                            ${detailText}
+                        </div>
+                        <div class="text-right">
+                            <div class="text-lg font-bold text-emerald-700 font-mono tracking-tight">${formatCurrency(item.value)}</div>
+                        </div>
+                    </div>
+                `;
+                list.appendChild(row);
+            });
+
+            // Draw Chart
+            drawChart(result.distribution, inputs.harta);
+
+            const notes = document.getElementById('notesArea');
+            if (result.note) {
+                notes.innerHTML = `<strong>Catatan:</strong> ${result.note}`;
+                notes.classList.remove('hidden');
+            } else {
+                notes.classList.add('hidden');
+            }
+
+            // Scroll to result
+            if (window.innerWidth < 1024) {
+                document.getElementById('resultCard').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    </script>
+</body>
+
+</html>

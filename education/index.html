@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar Faraidh - Edukasi Waris Islam</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        emerald: { 50: '#ecfdf5', 100: '#d1fae5', 600: '#059669', 800: '#065f46' },
+                    },
+                    fontFamily: { sans: ['Inter', 'sans-serif'], serif: ['Amiri', 'serif'] }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-gray-50 text-gray-800 font-sans antialiased min-h-screen flex flex-col">
+    <!-- Navbar -->
+    <nav class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <a href="../index.html" class="flex items-center gap-2">
+                    <span class="text-2xl text-emerald-600">☪️</span>
+                    <span class="font-bold text-xl tracking-tight text-gray-900">Faraidh<span
+                            class="text-emerald-600">Ku</span></span>
+                </a>
+                <div class="flex space-x-4">
+                    <a href="../index.html" class="text-gray-500 hover:text-emerald-600">Beranda</a>
+                    <a href="../calculator/index.html" class="text-gray-500 hover:text-emerald-600">Kalkulator</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 w-full">
+        <div class="text-center mb-16">
+            <h1 class="text-4xl font-bold text-gray-900 mb-4 font-serif">Materi Pembelajaran Waris Islam</h1>
+            <p class="text-xl text-gray-600">Pelajari ilmu Faraidh secara bertahap, mudah, dan terstruktur.</p>
+        </div>
+
+        <div class="grid gap-6 md:grid-cols-2">
+            <!-- Chapter 1 -->
+            <a href="basics.html"
+                class="group block bg-white rounded-2xl p-8 shadow-sm hover:shadow-md border border-gray-100 transition-all hover:border-emerald-200">
+                <div class="flex items-start justify-between mb-4">
+                    <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-3 py-1 rounded-full">BAB 1</span>
+                    <span class="text-2xl group-hover:scale-110 transition-transform">🏛️</span>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-emerald-600">Prinsip & Ahli Waris Utama
+                </h3>
+                <p class="text-gray-600 text-sm">Pelajari dasar hukum wajibnya waris, urutan pengurusan harta jenazah,
+                    dan siapa saja ahli waris utama.</p>
+            </a>
+
+            <!-- Chapter 2 -->
+            <a href="scenarios.html"
+                class="group block bg-white rounded-2xl p-8 shadow-sm hover:shadow-md border border-gray-100 transition-all hover:border-emerald-200">
+                <div class="flex items-start justify-between mb-4">
+                    <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-3 py-1 rounded-full">BAB 2</span>
+                    <span class="text-2xl group-hover:scale-110 transition-transform">👨‍👩‍👧‍👦</span>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-emerald-600">Pengaruh Keberadaan Anak
+                </h3>
+                <p class="text-gray-600 text-sm">Bagaimana keberadaan anak laki-laki atau perempuan mengubah drastis
+                    pembagian warisan.</p>
+            </a>
+
+            <!-- Chapter 3 -->
+            <a href="rules.html"
+                class="group block bg-white rounded-2xl p-8 shadow-sm hover:shadow-md border border-gray-100 transition-all hover:border-emerald-200">
+                <div class="flex items-start justify-between mb-4">
+                    <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-3 py-1 rounded-full">BAB 3</span>
+                    <span class="text-2xl group-hover:scale-110 transition-transform">👴👵</span>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-emerald-600">Orang Tua & Saudara</h3>
+                <p class="text-gray-600 text-sm">Aturan rinci bagian ayah, ibu, dan kapan saudara kandung/seibu
+                    mendapatkan atau terhalang warisan.</p>
+            </a>
+
+            <!-- Chapter 5 (Moved up logically or added) -->
+            <a href="grandparents_grandchildren.html"
+                class="group block bg-white rounded-2xl p-8 shadow-sm hover:shadow-md border border-gray-100 transition-all hover:border-emerald-200">
+                <div class="flex items-start justify-between mb-4">
+                    <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-3 py-1 rounded-full">BAB 5
+                        (Baru)</span>
+                    <span class="text-2xl group-hover:scale-110 transition-transform">🕰️</span>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-emerald-600">Kakek, Nenek & Cucu</h3>
+                <p class="text-gray-600 text-sm">Penjelasan lengkap tentang hak waris kakek, nenek, dan cucu dari jalur
+                    laki-laki.</p>
+            </a>
+
+            <!-- Chapter 4 -->
+            <a href="misconceptions.html"
+                class="group block bg-white rounded-2xl p-8 shadow-sm hover:shadow-md border border-gray-100 transition-all hover:border-emerald-200">
+                <div class="flex items-start justify-between mb-4">
+                    <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-3 py-1 rounded-full">BAB 4</span>
+                    <span class="text-2xl group-hover:scale-110 transition-transform">⚠️</span>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-emerald-600">Miskonsepsi & Rangkuman
+                </h3>
+                <p class="text-gray-600 text-sm">Hal-hal yang sering salah dipahami, seperti anak angkat, wasiat, dan
+                    peta logika praktis.</p>
+            </a>
+        </div>
+    </main>
+</body>
+
+</html>

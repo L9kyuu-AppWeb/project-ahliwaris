@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bab 5: Kakek, Nenek & Cucu - FaraidhKu</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: { colors: { emerald: { 50: '#ecfdf5', 600: '#059669', 800: '#065f46' } }, fontFamily: { sans: ['Inter', 'sans-serif'], serif: ['Amiri', 'serif'] } }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-white text-gray-800 font-sans antialiased">
+    <nav class="bg-white sticky top-0 z-50 border-b border-gray-100 shadow-sm">
+        <div class="max-w-4xl mx-auto px-4 h-16 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-2 text-gray-600 hover:text-emerald-600">
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                </svg>
+                <span class="font-medium">Kembali ke Daftar Materi</span>
+            </a>
+            <span class="font-bold text-gray-900">Bab 5 (Tambahan)</span>
+        </div>
+    </nav>
+
+    <main class="max-w-3xl mx-auto px-4 py-12">
+        <article class="prose prose-lg prose-emerald mx-auto">
+            <h1 class="font-serif text-4xl text-gray-900 mb-8">Kakek, Nenek & Cucu</h1>
+
+            <h2 class="text-2xl font-bold text-gray-800 mt-8 mb-4">1. Nenek (Dari Ibu & Ayah)</h2>
+            <div class="bg-emerald-50 border-l-4 border-emerald-500 p-4 rounded-r-lg mb-6">
+                <p class="font-bold text-emerald-900 m-0">Bagian: 1/6 (Dibagi rata jika lebih dari satu)</p>
+            </div>
+
+            <h3 class="font-bold text-gray-800">Siapa yang Memblokir Nenek?</h3>
+            <ul class="list-disc pl-6 space-y-2 mb-8">
+                <li><strong>Ibu</strong> masih hidup → Memblokir <strong>Semua Nenek</strong> (baik dari pihak ibu
+                    maupun ayah).</li>
+                <li><strong>Ayah</strong> masih hidup → Memblokir <strong>Nenek dari pihak Ayah</strong> saja.</li>
+            </ul>
+
+            <h2 class="text-2xl font-bold text-gray-800 mt-8 mb-4">2. Kakek (Dari Ayah)</h2>
+            <p>Yang dimaksud adalah Ayah dari Ayah. Kakek dari pihak Ibu <strong>bukan ahli waris</strong> (Dzawil
+                Arham).</p>
+
+            <h3 class="font-bold text-gray-800">Aturan Main:</h3>
+            <ul class="list-disc pl-6 space-y-2 mb-4">
+                <li>Jika <strong>Ayah</strong> masih hidup → Kakek terhalang (Gugur).</li>
+                <li>Jika Ayah wafat → Kakek menggantikan posisi Ayah (Mendapat 1/6 atau Sisa/Ashabah).</li>
+                <li>Kakek juga <strong>menghalangi Saudara</strong> (menurut pendapat yang dipakai sistem ini).</li>
+            </ul>
+
+            <h2 class="text-2xl font-bold text-gray-800 mt-8 mb-4">3. Cucu (Dari Anak Laki-laki)</h2>
+            <p>Cucu dari anak <strong>perempuan</strong> bukan ahli waris utama. Hanya cucu dari anak
+                <strong>laki-laki</strong> yang dapat mewarisi.</p>
+
+            <h3 class="font-bold text-gray-800">Cucu Laki-laki</h3>
+            <ul class="list-disc pl-6 space-y-2 mb-4">
+                <li>Menggantikan posisi anak laki-laki jika <strong>tidak ada anak laki-laki</strong> sama sekali.</li>
+                <li>Bagian: <strong>Sisa (Ashabah)</strong>.</li>
+                <li>Gugur jika ada Anak Laki-laki (Paman mereka).</li>
+            </ul>
+
+            <h3 class="font-bold text-gray-800">Cucu Perempuan</h3>
+            <table class="w-full text-left border-collapse rounded-lg overflow-hidden shadow-sm mt-4 text-sm">
+                <thead class="bg-gray-100">
+                    <tr>
+                        <th class="p-3">Kondisi</th>
+                        <th class="p-3">Bagian</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-200">
+                    <tr>
+                        <td class="p-3">Sendirian (tanpa anak pr, tanpa cucu lk)</td>
+                        <td class="p-3">1/2</td>
+                    </tr>
+                    <tr>
+                        <td class="p-3">Jamak (≥2)</td>
+                        <td class="p-3">2/3</td>
+                    </tr>
+                    <tr>
+                        <td class="p-3">Ada 1 Anak Perempuan</td>
+                        <td class="p-3">1/6 (Pelengkap 2/3)</td>
+                    </tr>
+                    <tr>
+                        <td class="p-3">Ada Cucu Laki-laki</td>
+                        <td class="p-3">Ashabah (2:1)</td>
+                    </tr>
+                    <tr>
+                        <td class="p-3">Ada ≥2 Anak Perempuan</td>
+                        <td class="p-3">❌ Gugur (Kecuali ada Cucu Lk)</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </article>
+
+        <div class="flex justify-between mt-12 pt-8 border-t border-gray-200">
+            <a href="misconceptions.html"
+                class="flex items-center gap-2 px-6 py-3 text-gray-500 hover:text-emerald-600 transition-colors">
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                </svg>
+                Bab 4: Miskonsepsi
+            </a>
+            <a href="../calculator/index.html"
+                class="group flex items-center gap-2 px-6 py-3 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition-colors">
+                Coba Kalkulator
+                <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+            </a>
+        </div>
+    </main>
+</body>
+
+</html>
