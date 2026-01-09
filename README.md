@@ -7,53 +7,49 @@
 
 ## 🌟 Fitur Utama
 
-### 1. 📚 Edukasi Faraidh Lengkap
-Modul pembelajaran terstruktur yang mencakup:
-*   **Prinsip Dasar**: Hukum wajibnya waris, rukun, dan syarat.
-*   **Ahli Waris Utama**: Penjelasan detail tentang bagian Ayah, Ibu, Suami/Istri, dan Anak.
-*   **Hijab (Penghalang)**: Siapa yang terhalang oleh siapa (Logika Blocking).
-*   **Kakek, Nenek & Cucu**: Aturan khusus untuk ahli waris pengganti (Extended Heirs).
-*   **Skenario Khusus**: Penjelasan kasus Aul (kekurangan harta) dan Radd (kelebihan harta).
+### 1. 📚 Edukasi Faraidh Terstruktur (4 Bab Utama)
+Modul pembelajaran yang disusun sistematis:
+*   **Bab 1: Prinsip Dasar**: Memahami konsep dasar, dalil, dan keutamaan ilmu waris.
+*   **Bab 2: Rukun & Syarat**: Penjelasan tentang Rukun Waris, Syarat, dan Penghalang (Mawani').
+*   **Bab 3: Ahli Waris**: Klasifikasi 25 Ahli Waris, Ashabul Furudh, Ashabah, dan logika Hijab.
+*   **Bab 4: Hitung Waris**: Panduan langkah demi langkah menghitung Tirkah, Asal Masalah, hingga kasus Aul & Radd.
 
 ### 2. 🧮 Kalkulator Waris Cerdas
 Alat bantu hitung yang akurat dan transparan:
-*   **Prioritas Deduksi**: Menghitung harta bersih setelah dikurangi Biaya Jenazah, Hutang, dan Wasiat (Maks 1/3) sebelum dibagi.
-*   **Dukungan Ahli Waris Lengkap**: Mencakup Anak, Orang Tua, Pasangan, Saudara (Kandung/Seayah/Seibu), Kakek, Nenek, dan Cucu.
-*   **Visualisasi Hasil**: Dilengkapi dengan **Donut Chart** dan kartu hasil yang mudah dibaca.
-*   **Penanganan Kasus Kompleks**: Otomatis menangani kasus *Aul* (pembilang > penyebut) dan *Radd* (pembilang < penyebut).
-*   **Live Currency Formatter**: Input angka otomatis diformat ke Rupiah (Rp) untuk kemudahan pembacaan.
+*   **Prioritas Deduksi**: Menghitung harta bersih setelah dikurangi Biaya Jenazah, Hutang, dan Wasiat (Maks 1/3).
+*   **Input Lengkap**: Mendukung input untuk Pasangan, Orang Tua, Kakek/Nenek, Anak, Cucu, dan Saudara.
+*   **Visualisasi Donut Chart**: Memudahkan pemahaman proporsi pembagian.
+*   **Penanganan Kasus Khusus**: Otomatis mendeteksi dan menghitung koreksi **Aul** (Defisit) dan **Radd** (Surplus).
+*   **Live Currency**: Format Rupiah otomatis saat mengetik.
 
-### 3. 🛡️ Privasi & Keamanan
-*   **Client-Side Execution**: Semua perhitungan berjalan 100% di browser pengguna. Tidak ada data pribadi atau nominal harta yang dikirim ke server.
+### 3. 🛡️ Privasi & Transparansi
+*   **Client-Side Only**: Perhitungan 100% di browser. Data privasi aman.
+*   **Halaman Informasi**: Dilengkapi halaman [Kebijakan Privasi](privacy.html) dan [Tentang Kami](about.html).
 
 ## 🛠️ Teknologi yang Digunakan
 
-Proyek ini dibangun dengan teknologi web standar yang ringan dan cepat:
+Proyek ini dibangun dengan pendekatan *Modern Static Web*:
 *   **HTML5**: Struktur semantik.
-*   **TailwindCSS (via CDN)**: Styling modern dan responsif.
-*   **Vanilla JavaScript (ES6+)**: Logika perhitungan inti tanpa framework berat.
-*   **Google Fonts**: Menggunakan font *Inter* (UI) dan *Amiri* (Arab/Nuansa Islam).
+*   **TailwindCSS**: Utilitas styling modern.
+*   **Vanilla JavaScript**: Logika Faraidh berkinerja tinggi.
+*   **Phosphor Icons**: Set ikon yang konsisten dan elegan.
+*   **Google Fonts**: *Inter* (UI) dan *Amiri* (Arab).
 
 ## 🚀 Cara Menjalankan
-
-Karena proyek ini adalah Static Web App, Anda dapat menjalankannya dengan sangat mudah:
 
 1.  **Clone Repository**
     ```bash
     git clone https://github.com/L9kyuu-AppWeb/project-ahliwaris.git
     ```
-2.  **Buka File**
-    Buka folder proyek dan klik ganda file `index.html` untuk membukanya di browser favorit Anda.
-
-Tidak diperlukan instalasi Node.js, PHP, atau database.
+2.  **Buka**: Klik ganda `index.html`. Selesai!
 
 ## 🤝 Referensi Hukum
 
-Aplikasi ini disusun berdasarkan kaidah Faraidh yang disepakati oleh **Jumhur Ulama (Mayoritas Ulama)** dan merujuk pada prinsip-prinsip dalam **Kompilasi Hukum Islam (KHI)** di Indonesia.
+Aplikasi ini merujuk pada **Jumhur Ulama** dan **Kompilasi Hukum Islam (KHI)**.
 
 ## 📝 Lisensi
 
-**Open Source**. Dibuat untuk kemaslahatan umat. Bebas digunakan, dipelajari, dan dikembangkan ulang.
+**Open Source**. Bebas digunakan dan dikembangkan untuk kebaikan umat.
 
 ---
-*Dibuat dengan ❤️ oleh [l9kyuu next.buildapp]*
+*Maintained by Team FaraidhKu - wearebuildapp@gmail.com*
