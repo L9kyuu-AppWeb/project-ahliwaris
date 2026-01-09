@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kebijakan Privasi - FaraidhKu</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        emerald: {
+                            50: '#ecfdf5',
+                            100: '#d1fae5',
+                            600: '#059669',
+                            800: '#065f46',
+                            900: '#064e3b',
+                        },
+                        slate: {
+                            850: '#151f32', // Custom dark
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Amiri', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-gray-50 text-gray-800 font-sans antialiased">
+    <!-- Navbar -->
+    <nav class="bg-white/90 backdrop-blur-md sticky top-0 z-50 border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <a href="index.html" class="flex items-center gap-2 group">
+                    <span
+                        class="text-3xl bg-clip-text text-transparent bg-gradient-to-r from-emerald-600 to-teal-500 group-hover:scale-110 transition-transform">☪️</span>
+                    <span class="font-bold text-2xl tracking-tight text-gray-900">Faraidh<span
+                            class="text-emerald-600">Ku</span></span>
+                </a>
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="index.html"
+                        class="text-gray-500 hover:text-emerald-600 font-medium transition-colors">Beranda</a>
+                    <a href="education/index.html"
+                        class="text-gray-500 hover:text-emerald-600 font-medium transition-colors">Materi Belajar</a>
+                    <a href="calculator/index.html"
+                        class="px-5 py-2.5 bg-emerald-600 text-white rounded-full hover:bg-emerald-700 transition-all shadow-lg shadow-emerald-600/20 font-medium transform hover:-translate-y-0.5">Kalkulator
+                        Waris</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-4xl mx-auto px-4 py-16 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-6 font-serif">Kebijakan Privasi</h1>
+            <p class="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+                Transparansi adalah fondasi kepercayaan. Kami berkomitmen melindungi privasi data Anda.
+            </p>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 sm:p-12 space-y-12">
+
+            <!-- Section 1 -->
+            <section>
+                <div class="flex items-start gap-4 mb-4">
+                    <div
+                        class="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600 flex-shrink-0">
+                        <i class="ph ph-database text-xl"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-gray-900 mt-1">Pengumpulan Data</h2>
+                </div>
+                <div class="pl-14">
+                    <p class="text-gray-600 mb-4 leading-relaxed">
+                        FaraidhKu adalah aplikasi web <strong>Client-Side</strong>. Artinya, semua proses perhitungan
+                        waris terjadi di dalam browser perangkat Anda sendiri.
+                    </p>
+                    <ul class="space-y-2 text-gray-600 list-disc list-outside ml-4">
+                        <li>Kami <span class="text-emerald-600 font-bold">tidak menyimpan</span> data input harta,
+                            keluarga, atau ahli waris Anda di server kami.</li>
+                        <li>Kami <span class="text-emerald-600 font-bold">tidak mengirimkan</span> data pribadi Anda ke
+                            pihak ketiga manapun.</li>
+                        <li>Data Anda hilang segera setelah Anda menutup tab browser atau melakukan refresh halaman.
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Section 2 -->
+            <section>
+                <div class="flex items-start gap-4 mb-4">
+                    <div
+                        class="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600 flex-shrink-0">
+                        <i class="ph ph-cookie text-xl"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-gray-900 mt-1">Penggunaan Cookies</h2>
+                </div>
+                <div class="pl-14">
+                    <p class="text-gray-600 leading-relaxed">
+                        Saat ini, FaraidhKu <span class="font-bold">tidak menggunakan cookies</span> pelacak atau
+                        analitik pihak ketiga. Kami fokus pada fungsionalitas murni tanpa memantau perilaku pengguna.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Section 3 -->
+            <section>
+                <div class="flex items-start gap-4 mb-4">
+                    <div
+                        class="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600 flex-shrink-0">
+                        <i class="ph ph-shield-check text-xl"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-gray-900 mt-1">Keamanan</h2>
+                </div>
+                <div class="pl-14">
+                    <p class="text-gray-600 leading-relaxed">
+                        Karena tidak ada data yang dikirim ke server (backend), risiko kebocoran data sangat minim.
+                        Keamanan data bergantung pada keamanan perangkat dan browser yang Anda gunakan.
+                    </p>
+                </div>
+            </section>
+
+            <div class="pt-8 border-t border-gray-100 text-center text-gray-500 text-sm">
+                Terakhir diperbarui: 9 Januari 2026
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-16 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-12 mb-12">
+                <!-- Brand -->
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center gap-2 mb-6">
+                        <span class="text-3xl">☪️</span>
+                        <span class="font-bold text-2xl text-white">Faraidh<span
+                                class="text-emerald-500">Ku</span></span>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed max-w-sm">
+                        Platform edukasi dan kalkulasi waris Islam terpercaya. Membantu keluarga Muslim membagi warisan
+                        dengan adil, transparan, dan sesuai syariat.
+                    </p>
+                    <div class="flex gap-4 mt-6">
+                        <a href="https://github.com/L9kyuu-AppWeb/project-ahliwaris" target="_blank"
+                            class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center hover:bg-emerald-600 transition-colors text-white"><i
+                                class="ph ph-github-logo"></i></a>
+                        <a href="mailto:wearebuildapp@gmail.com"
+                            class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center hover:bg-emerald-600 transition-colors text-white"><i
+                                class="ph ph-envelope"></i></a>
+                    </div>
+                </div>
+
+                <!-- Navigation -->
+                <div>
+                    <h4 class="text-white font-bold mb-6 uppercase text-xs tracking-widest text-emerald-500">Navigasi
+                    </h4>
+                    <ul class="space-y-4 text-sm">
+                        <li><a href="index.html" class="hover:text-emerald-400 transition-colors">Beranda</a></li>
+                        <li><a href="education/index.html" class="hover:text-emerald-400 transition-colors">Materi
+                                Belajar</a></li>
+                        <li><a href="calculator/index.html" class="hover:text-emerald-400 transition-colors">Kalkulator
+                                Waris</a></li>
+                    </ul>
+                </div>
+
+                <!-- Materials -->
+                <div>
+                    <h4 class="text-white font-bold mb-6 uppercase text-xs tracking-widest text-emerald-500">Bab Materi
+                    </h4>
+                    <ul class="space-y-4 text-sm">
+                        <li><a href="education/bab1.html" class="hover:text-emerald-400 transition-colors">Prinsip
+                                Dasar</a></li>
+                        <li><a href="education/bab2.html" class="hover:text-emerald-400 transition-colors">Rukun &
+                                Syarat</a></li>
+                        <li><a href="education/bab3.html" class="hover:text-emerald-400 transition-colors">Ahli
+                                Waris</a></li>
+                        <li><a href="education/bab4.html" class="hover:text-emerald-400 transition-colors">Hitung
+                                Waris</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom -->
+            <div
+                class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500 gap-4">
+                <p>&copy; 2025 FaraidhKu. Open Source & Non-Profit.</p>
+                <div class="flex gap-6">
+                    <a href="privacy.html" class="text-emerald-400 font-medium transition-colors">Privasi</a>
+                    <a href="about.html" class="hover:text-emerald-400 transition-colors">Tentang Kami</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

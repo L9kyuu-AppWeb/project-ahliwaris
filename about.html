@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentang Kami - FaraidhKu</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        emerald: {
+                            50: '#ecfdf5',
+                            100: '#d1fae5',
+                            600: '#059669',
+                            800: '#065f46',
+                            900: '#064e3b',
+                        },
+                        slate: {
+                            850: '#151f32', // Custom dark
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Amiri', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-gray-50 text-gray-800 font-sans antialiased">
+    <!-- Navbar -->
+    <nav class="bg-white/90 backdrop-blur-md sticky top-0 z-50 border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <a href="index.html" class="flex items-center gap-2 group">
+                    <span
+                        class="text-3xl bg-clip-text text-transparent bg-gradient-to-r from-emerald-600 to-teal-500 group-hover:scale-110 transition-transform">☪️</span>
+                    <span class="font-bold text-2xl tracking-tight text-gray-900">Faraidh<span
+                            class="text-emerald-600">Ku</span></span>
+                </a>
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="index.html"
+                        class="text-gray-500 hover:text-emerald-600 font-medium transition-colors">Beranda</a>
+                    <a href="education/index.html"
+                        class="text-gray-500 hover:text-emerald-600 font-medium transition-colors">Materi Belajar</a>
+                    <a href="calculator/index.html"
+                        class="px-5 py-2.5 bg-emerald-600 text-white rounded-full hover:bg-emerald-700 transition-all shadow-lg shadow-emerald-600/20 font-medium transform hover:-translate-y-0.5">Kalkulator
+                        Waris</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-4xl mx-auto px-4 py-16 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-6 font-serif">Tentang FaraidhKu</h1>
+            <p class="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+                Misi kami adalah memudahkan setiap keluarga Muslim dalam memahami dan membagi warisan sesuai syariat
+                Islam.
+            </p>
+        </div>
+
+        <div class="space-y-12">
+            <!-- Mission Card -->
+            <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 sm:p-12">
+                <div class="flex flex-col md:flex-row gap-8 items-center">
+                    <div class="w-full md:w-1/3 flex justify-center">
+                        <div
+                            class="w-32 h-32 bg-emerald-100 rounded-full flex items-center justify-center text-6xl shadow-inner">
+                            ☪️
+                        </div>
+                    </div>
+                    <div class="w-full md:w-2/3">
+                        <h2 class="text-2xl font-bold text-gray-900 mb-4">Mengapa FaraidhKu Dibuat?</h2>
+                        <p class="text-gray-600 leading-relaxed mb-4">
+                            Ilmu Faraidh (Waris Islam) sering dianggap rumit dan sulit dipahami. Akibatnya, banyak
+                            pembagian harta warisan yang ditunda atau tidak sesuai syariat, memicu konflik keluarga.
+                        </p>
+                        <p class="text-gray-600 leading-relaxed">
+                            <span class="font-bold text-emerald-700">FaraidhKu</span> hadir sebagai solusi digital yang
+                            menggabungkan edukasi yang mudah dicerna dengan kalkulator otomatis yang akurat, membantu
+                            Anda menjalankan syariat dengan tenang dan adil.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Features Grid -->
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-white p-8 rounded-2xl border border-gray-100 hover:shadow-md transition-shadow">
+                    <div
+                        class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600 text-2xl mb-4">
+                        <i class="ph ph-shield-check"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Sesuai Syariat</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Algoritma perhitungan dikembangkan berdasarkan dalil Al-Qur'an (Surah An-Nisa: 11, 12, 176) dan
+                        Ijma' ulama Ahlussunnah wal Jama'ah.
+                    </p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl border border-gray-100 hover:shadow-md transition-shadow">
+                    <div
+                        class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center text-purple-600 text-2xl mb-4">
+                        <i class="ph ph-code"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Open Source</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Kode sumber proyek ini terbuka untuk umum. Anda bisa mengaudit, berkontribusi, atau
+                        mengembangkan ulang untuk kebaikan umat.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Credits -->
+            <div class="bg-slate-900 text-gray-300 rounded-2xl p-8 sm:p-12 text-center">
+                <h2 class="text-2xl font-bold text-white mb-6">Berkontribusi</h2>
+                <p class="mb-8 max-w-xl mx-auto">
+                    Proyek ini dikembangkan secara sukarela (Non-Profit). Jika Anda menemukan bug atau memiliki saran
+                    fitur, silakan hubungi kami atau berkontribusi di GitHub.
+                </p>
+                <div class="flex justify-center gap-4">
+                    <a href="https://github.com/L9kyuu-AppWeb/project-ahliwaris" target="_blank"
+                        class="inline-flex items-center gap-2 px-6 py-3 bg-white text-gray-900 rounded-lg font-bold hover:bg-gray-100 transition-colors">
+                        <i class="ph ph-github-logo text-xl"></i>
+                        GitHub Repository
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-16 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-12 mb-12">
+                <!-- Brand -->
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center gap-2 mb-6">
+                        <span class="text-3xl">☪️</span>
+                        <span class="font-bold text-2xl text-white">Faraidh<span
+                                class="text-emerald-500">Ku</span></span>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed max-w-sm">
+                        Platform edukasi dan kalkulasi waris Islam terpercaya. Membantu keluarga Muslim membagi warisan
+                        dengan adil, transparan, dan sesuai syariat.
+                    </p>
+                    <div class="flex gap-4 mt-6">
+                        <a href="https://github.com/L9kyuu-AppWeb/project-ahliwaris" target="_blank"
+                            class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center hover:bg-emerald-600 transition-colors text-white"><i
+                                class="ph ph-github-logo"></i></a>
+                        <a href="mailto:wearebuildapp@gmail.com"
+                            class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center hover:bg-emerald-600 transition-colors text-white"><i
+                                class="ph ph-envelope"></i></a>
+                    </div>
+                </div>
+
+                <!-- Navigation -->
+                <div>
+                    <h4 class="text-white font-bold mb-6 uppercase text-xs tracking-widest text-emerald-500">Navigasi
+                    </h4>
+                    <ul class="space-y-4 text-sm">
+                        <li><a href="index.html" class="hover:text-emerald-400 transition-colors">Beranda</a></li>
+                        <li><a href="education/index.html" class="hover:text-emerald-400 transition-colors">Materi
+                                Belajar</a></li>
+                        <li><a href="calculator/index.html" class="hover:text-emerald-400 transition-colors">Kalkulator
+                                Waris</a></li>
+                    </ul>
+                </div>
+
+                <!-- Materials -->
+                <div>
+                    <h4 class="text-white font-bold mb-6 uppercase text-xs tracking-widest text-emerald-500">Bab Materi
+                    </h4>
+                    <ul class="space-y-4 text-sm">
+                        <li><a href="education/bab1.html" class="hover:text-emerald-400 transition-colors">Prinsip
+                                Dasar</a></li>
+                        <li><a href="education/bab2.html" class="hover:text-emerald-400 transition-colors">Rukun &
+                                Syarat</a></li>
+                        <li><a href="education/bab3.html" class="hover:text-emerald-400 transition-colors">Ahli
+                                Waris</a></li>
+                        <li><a href="education/bab4.html" class="hover:text-emerald-400 transition-colors">Hitung
+                                Waris</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom -->
+            <div
+                class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500 gap-4">
+                <p>&copy; 2025 FaraidhKu. Open Source & Non-Profit.</p>
+                <div class="flex gap-6">
+                    <a href="privacy.html" class="hover:text-emerald-400 transition-colors">Privasi</a>
+                    <a href="about.html" class="text-emerald-400 font-medium transition-colors">Tentang Kami</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
