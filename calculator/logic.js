@@ -29,7 +29,7 @@ function calculateWarisan(inputs) {
     } = inputs;
 
     let shares = [];
-    let note = "";
+    let notes = []; // Changed from string to array
     let totalPortion = 0;
 
     // --- 1. DETERMINE HEIR STATUS (BLOCKING/HIJAB) ---
@@ -46,6 +46,9 @@ function calculateWarisan(inputs) {
     // Cucu Blocked by Son (Anak Laki)
     const cucuLakiBlocked = hasAnakLaki;
     const cucuPrBlockedBySon = hasAnakLaki;
+
+    if (cucuLaki > 0 && cucuLakiBlocked) notes.push("Cucu Laki-laki terhalang oleh Anak Laki-laki.");
+    if (cucuPr > 0 && cucuPrBlockedBySon) notes.push("Cucu Perempuan terhalang oleh Anak Laki-laki.");
     // Cucu Pr blocked by 2+ Daughters is Special: Only if no Cucu Laki exists (Lucky Kinsman).
     // If Cucu Laki exists, Cucu Pr becomes Ashabah even if 2+ Daughters exist.
     // We check this later in logic.
@@ -57,12 +60,19 @@ function calculateWarisan(inputs) {
     // Grandparents
     // Kakek blocked by Ayah
     const kakekBlocked = hasAyah;
+    if (kakek && kakekBlocked) notes.push("Kakek terhalang oleh Ayah.");
 
     // Nenek Rules:
     // Nenek (Ibu) blocked by Ibu.
     // Nenek (Ayah) blocked by Ibu OR Ayah.
     const nenekIbuBlocked = hasIbu;
     const nenekAyahBlocked = hasIbu || hasAyah;
+
+    if (nenekIbu && nenekIbuBlocked) notes.push("Nenek (dari Ibu) terhalang oleh Ibu.");
+    if (nenekAyah && nenekAyahBlocked) {
+        if (hasIbu) notes.push("Nenek (dari Ayah) terhalang oleh Ibu.");
+        else if (hasAyah) notes.push("Nenek (dari Ayah) terhalang oleh Ayah.");
+    }
 
     // Siblings Rules updated:
     // Blocked by: Anak Laki, Ayah, OR KAKEK (User summary: "Kakek dari ayah menghalangi saudara")
@@ -209,7 +219,7 @@ function calculateWarisan(inputs) {
                 totalPortion += 1 / 6;
             } else {
                 // >= 2 Daughters -> Blocked (unless Cucu Laki exists, which we checked above)
-                note += "Cucu Perempuan terhalang oleh 2 anak perempuan (dan tidak ada cucu laki-laki). ";
+                notes.push("Cucu Perempuan terhalang oleh 2 anak perempuan (dan tidak ada cucu laki-laki).");
             }
         }
     }
@@ -235,15 +245,18 @@ function calculateWarisan(inputs) {
         }
     } else if (hasSiblings && siblingsBlocked) {
         let blocker = "";
-        if (hasAnakLaki || (hasCucuLaki && !cucuLakiBlocked)) blocker = "Keturunan Laki-laki";
-        else if (hasAyah || kakek) blocker = "Ayah/Kakek";
-        note += `Saudara Kandung terhalang (mahjub) oleh ${blocker}. `;
+        if (hasAnakLaki) blocker = "Anak Laki-laki";
+        else if (hasCucuLaki && !cucuLakiBlocked) blocker = "Cucu Laki-laki";
+        else if (hasAyah) blocker = "Ayah";
+        else if (kakek) blocker = "Kakek";
+
+        notes.push(`Saudara Kandung terhalang (mahjub) oleh ${blocker}.`);
     }
 
     // --- 3. CALCULATE AUL ---
     let aulFactor = 1;
     if (totalPortion > 1) {
-        note += "Terjadi 'Aul. ";
+        notes.push("Terjadi 'Aul (Total saham melebihi 1).");
         aulFactor = totalPortion;
     }
 
@@ -293,6 +306,7 @@ function calculateWarisan(inputs) {
         const onePart = remainder / parts;
         result.push({ name: `Anak Laki-laki (${anakLaki})`, shareText: "Ashabah 2:1", value: onePart * 2 * anakLaki, perPerson: onePart * 2 });
         if (anakPerempuan > 0) result.push({ name: `Anak Perempuan (${anakPerempuan})`, shareText: "Ashabah 2:1", value: onePart * 1 * anakPerempuan, perPerson: onePart });
+        remainder = 0;
     }
     else if (hasCucuLaki && !cucuLakiBlocked) {
         // 2. Cucu Level
@@ -300,6 +314,7 @@ function calculateWarisan(inputs) {
         const onePart = remainder / parts;
         result.push({ name: `Cucu Laki-laki (${cucuLaki})`, shareText: "Ashabah 2:1", value: onePart * 2 * cucuLaki, perPerson: onePart * 2 });
         if (cucuPr > 0) result.push({ name: `Cucu Perempuan (${cucuPr})`, shareText: "Ashabah 2:1", value: onePart * 1 * cucuPr, perPerson: onePart });
+        remainder = 0;
     }
     else {
         // Check Father Ashabah
@@ -342,5 +357,5 @@ function calculateWarisan(inputs) {
         result.push({ name: "Sisa / Baitul Mal", shareText: "Sisa", value: remainder });
     }
 
-    return { totalHarta: harta, distribution: result, note: note };
+    return { totalHarta: harta, distribution: result, notes: notes };
 }

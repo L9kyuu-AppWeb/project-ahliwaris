@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bab 2: Rukun, Syarat, dan Penghalang - FaraidhKu</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Outfit:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        emerald: { 50: '#ecfdf5', 100: '#d1fae5', 600: '#059669', 700: '#047857', 800: '#065f46', 900: '#064e3b' },
+                        slate: { 850: '#151f2e' }
+                    },
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                        serif: ['Amiri', 'serif']
+                    },
+                    backgroundImage: {
+                        'grid-pattern': "radial-gradient(rgba(5, 150, 105, 0.1) 1px, transparent 1px)",
+                    },
+                    backgroundSize: {
+                        'grid-pattern': '24px 24px',
+                    },
+                    typography: (theme) => ({
+                        DEFAULT: {
+                            css: {
+                                color: theme('colors.gray.600'),
+                                h2: { color: theme('colors.emerald.800') },
+                                strong: { color: theme('colors.gray.900') },
+                            }
+                        }
+                    })
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(229, 231, 235, 0.6);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800 font-sans antialiased selection:bg-emerald-200 selection:text-emerald-900">
+
+    <!-- Navigation -->
+    <nav
+        class="bg-white/90 backdrop-blur-md sticky top-0 z-50 border-b border-gray-100 shadow-sm transition-all duration-300">
+        <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+            <a href="index.html"
+                class="flex items-center gap-2 text-gray-600 hover:text-emerald-600 transition-colors group">
+                <div class="p-1.5 rounded-lg group-hover:bg-emerald-50 transition-colors">
+                    <i class="ph ph-arrow-left text-xl"></i>
+                </div>
+                <span class="font-medium">Daftar Materi</span>
+            </a>
+            <div
+                class="flex items-center gap-2 text-sm font-semibold bg-emerald-50 text-emerald-700 px-3 py-1 rounded-full border border-emerald-100">
+                <span>Bab 2</span>
+                <span class="h-1 w-1 bg-emerald-400 rounded-full"></span>
+                <span class="text-emerald-600/70">4 Bab</span>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <header class="relative pt-16 pb-24 overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-b from-emerald-50/80 to-transparent z-0"></div>
+            <div class="absolute inset-0 bg-grid-pattern z-0 opacity-50"></div>
+
+            <div class="relative z-10 max-w-4xl mx-auto px-4 text-center">
+                <span
+                    class="inline-block py-1 px-3 rounded-full bg-white border border-emerald-100 text-emerald-600 text-sm font-semibold mb-6 shadow-sm">
+                    🏗️ Pilar & Aturan Main
+                </span>
+                <h1 class="font-serif text-5xl md:text-6xl text-gray-900 mb-6 leading-tight">
+                    Rukun, Syarat <br>
+                    <span class="text-emerald-600 italic">& Penghalang Waris</span>
+                </h1>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+                    Memahami 3 pilar wajib, syarat sah, dan hal-hal yang dapat membatalkan hak waris seseorang dalam
+                    Islam secara mendetail.
+                </p>
+            </div>
+        </header>
+
+        <div class="max-w-4xl mx-auto px-4 pb-24 space-y-24">
+
+            <!-- 2.1 Rukun Waris -->
+            <section id="rukun" class="scroll-mt-24">
+                <div class="flex items-center gap-4 mb-8">
+                    <div
+                        class="h-10 w-10 flex items-center justify-center rounded-xl bg-emerald-600 text-white font-bold shadow-lg shadow-emerald-600/20">
+                        2.1</div>
+                    <h2 class="text-2xl font-bold text-gray-900">Rukun Waris</h2>
+                </div>
+
+                <p class="text-lg text-gray-600 mb-8 max-w-3xl leading-relaxed">
+                    Rukun adalah unsur pokok yang <strong>wajib ada</strong>. Jika salah satu hilang, maka pewarisan
+                    <span class="text-red-500 font-semibold">tidak dapat terjadi</span>. Terdapat 3 rukun dalam waris
+                    Islam:
+                </p>
+
+                <!-- Rukun 1 Details -->
+                <div class="glass-card p-8 rounded-2xl shadow-sm border border-gray-100 mb-8 relative overflow-hidden">
+                    <div class="flex items-start gap-6">
+                        <div
+                            class="w-16 h-16 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-3xl flex-shrink-0">
+                            ⚰️</div>
+                        <div class="flex-1">
+                            <h3 class="font-bold text-gray-900 text-xl mb-2">1. Al-Muwarrits (Pewaris)</h3>
+                            <p class="text-gray-600 mb-4">Orang yang meninggal dunia dan meninggalkan harta.</p>
+
+                            <!-- Types of Death -->
+                            <div class="bg-gray-50 rounded-xl p-5 border border-gray-100">
+                                <h4 class="font-semibold text-emerald-800 text-sm uppercase tracking-wide mb-3">3 Jenis
+                                    Kematian:</h4>
+                                <ul class="space-y-3">
+                                    <li class="flex gap-3 text-sm text-gray-700">
+                                        <i class="ph ph-check-circle text-emerald-500 text-lg"></i>
+                                        <div>
+                                            <strong class="text-gray-900">Kematian Hakiki:</strong>
+                                            Kematian nyata yang dapat disaksikan (Ruh berpisah dari jasad).
+                                        </div>
+                                    </li>
+                                    <li class="flex gap-3 text-sm text-gray-700">
+                                        <i class="ph ph-check-circle text-emerald-500 text-lg"></i>
+                                        <div>
+                                            <strong class="text-gray-900">Kematian Hukmi:</strong>
+                                            Vonis mati oleh hakim untuk orang hilang (mafqud) yang tidak diketahui
+                                            kabarnya setelah masa tunggu.
+                                        </div>
+                                    </li>
+                                    <li class="flex gap-3 text-sm text-gray-700">
+                                        <i class="ph ph-check-circle text-emerald-500 text-lg"></i>
+                                        <div>
+                                            <strong class="text-gray-900">Kematian Taqdiri:</strong>
+                                            Perkiraan kematian, seperti janin yang lahir mati akibat ibunya dipukul.
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rukun 2 Details -->
+                <div class="glass-card p-8 rounded-2xl shadow-sm border border-gray-100 mb-8 relative overflow-hidden">
+                    <div class="flex items-start gap-6">
+                        <div
+                            class="w-16 h-16 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-3xl flex-shrink-0">
+                            👨‍👩‍👧‍👦</div>
+                        <div class="flex-1">
+                            <h3 class="font-bold text-gray-900 text-xl mb-2">2. Al-Warits (Ahli Waris)</h3>
+                            <p class="text-gray-600 mb-4">Orang yang berhak menerima harta. Kriterianya:</p>
+                            <ul class="list-disc pl-5 space-y-1 text-sm text-gray-600 mb-4">
+                                <li>Masih hidup saat pewaris meninggal.</li>
+                                <li>Tidak terhalang oleh penghalang (mahjub).</li>
+                            </ul>
+
+                            <div class="grid sm:grid-cols-3 gap-3">
+                                <div class="bg-emerald-50/50 p-3 rounded-lg border border-emerald-100 text-center">
+                                    <span class="block font-bold text-emerald-800 text-sm">Hubungan Nasab</span>
+                                    <span class="text-xs text-gray-500">Darah/Keturunan</span>
+                                </div>
+                                <div class="bg-emerald-50/50 p-3 rounded-lg border border-emerald-100 text-center">
+                                    <span class="block font-bold text-emerald-800 text-sm">Pernikahan</span>
+                                    <span class="text-xs text-gray-500">Suami/Istri Sah</span>
+                                </div>
+                                <div
+                                    class="bg-emerald-50/50 p-3 rounded-lg border border-emerald-100 text-center opacity-75">
+                                    <span class="block font-bold text-emerald-800 text-sm">Wala'</span>
+                                    <span class="text-xs text-gray-500">Memerdekakan Budak</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rukun 3 Details -->
+                <div class="glass-card p-8 rounded-2xl shadow-sm border border-gray-100 relative overflow-hidden">
+                    <div class="flex items-start gap-6">
+                        <div
+                            class="w-16 h-16 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-3xl flex-shrink-0">
+                            💰</div>
+                        <div class="flex-1">
+                            <h3 class="font-bold text-gray-900 text-xl mb-2">3. Al-Mauruts (Harta Warisan)</h3>
+                            <p class="text-gray-600 mb-4">Segala aset bernilai ekonomis yang ditinggalkan.</p>
+
+                            <div class="grid sm:grid-cols-2 gap-4">
+                                <div class="p-4 bg-green-50 rounded-xl border border-green-100">
+                                    <h5 class="font-bold text-green-700 text-sm mb-2">✅ Termasuk Warisan</h5>
+                                    <ul class="text-xs space-y-1 text-gray-600 list-disc pl-4">
+                                        <li>Harta bergerak (uang, emas, kendaraan)</li>
+                                        <li>Properti (tanah, rumah)</li>
+                                        <li>Piutang, Royalti, Hak Cipta</li>
+                                    </ul>
+                                </div>
+                                <div class="p-4 bg-red-50 rounded-xl border border-red-100">
+                                    <h5 class="font-bold text-red-700 text-sm mb-2">❌ Bukan Warisan</h5>
+                                    <ul class="text-xs space-y-1 text-gray-600 list-disc pl-4">
+                                        <li>Hutang pewaris (wajib bayar dulu)</li>
+                                        <li>Biaya jenazah & Wasiat</li>
+                                        <li>Harta Wakaf/Hibah (diberikan saat hidup)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2.2 Syarat Waris -->
+            <section id="syarat" class="scroll-mt-24">
+                <div class="flex items-center gap-4 mb-8">
+                    <div
+                        class="h-10 w-10 flex items-center justify-center rounded-xl bg-emerald-600 text-white font-bold shadow-lg shadow-emerald-600/20">
+                        2.2</div>
+                    <h2 class="text-2xl font-bold text-gray-900">Syarat-Syarat Waris</h2>
+                </div>
+
+                <div class="space-y-6">
+                    <!-- Syarat 1 -->
+                    <div
+                        class="glass-card p-6 rounded-2xl flex flex-col sm:flex-row gap-6 hover:border-emerald-300 transition-colors">
+                        <div
+                            class="w-12 h-12 bg-white rounded-full border-2 border-emerald-100 text-emerald-600 flex items-center justify-center font-bold text-xl flex-shrink-0">
+                            1</div>
+                        <div class="flex-1">
+                            <h3 class="font-bold text-lg text-gray-900 mb-2">Meninggalnya Pewaris</h3>
+                            <p class="text-gray-600 mb-3 text-sm">Harus dipastikan pewaris sudah meninggal.</p>
+                            <div class="bg-amber-50 rounded-lg p-3 text-sm border-l-4 border-amber-400">
+                                <strong class="text-amber-800">Kasus Khusus:</strong> Untuk orang hilang (Mafqud),
+                                hartanya baru bisa dibagi setelah ada vonis hakim. Janin dalam kandungan belum bisa
+                                mewarisi sampai ia lahir hidup.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Syarat 2 -->
+                    <div
+                        class="glass-card p-6 rounded-2xl flex flex-col sm:flex-row gap-6 hover:border-emerald-300 transition-colors">
+                        <div
+                            class="w-12 h-12 bg-white rounded-full border-2 border-emerald-100 text-emerald-600 flex items-center justify-center font-bold text-xl flex-shrink-0">
+                            2</div>
+                        <div class="flex-1">
+                            <h3 class="font-bold text-lg text-gray-900 mb-2">Hidupnya Ahli Waris</h3>
+                            <p class="text-gray-600 mb-3 text-sm">Ahli waris harus hidup saat pewaris wafat.</p>
+
+                            <div class="bg-gray-50 rounded-lg p-4 border border-gray-200">
+                                <h4 class="font-semibold text-gray-900 text-sm mb-2">Kasus Kematian Bersamaan (Al-Gharqa
+                                    wa Al-Hadm)</h4>
+                                <p class="text-xs text-gray-600 mb-2">Jika dua orang saling mewarisi (misal ayah dan
+                                    anak) meninggal bersamaan (kecelakaan) dan tidak tahu siapa duluan:</p>
+                                <p class="text-xs font-semibold text-red-600">❌ Mereka TIDAK saling mewarisi.</p>
+                                <p class="text-xs text-gray-500 mt-1">Hartanya langsung ke ahli waris mereka
+                                    masing-masing yang masih hidup.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Syarat 3 -->
+                    <div
+                        class="glass-card p-6 rounded-2xl flex flex-col sm:flex-row gap-6 hover:border-emerald-300 transition-colors">
+                        <div
+                            class="w-12 h-12 bg-white rounded-full border-2 border-emerald-100 text-emerald-600 flex items-center justify-center font-bold text-xl flex-shrink-0">
+                            3</div>
+                        <div class="flex-1">
+                            <h3 class="font-bold text-lg text-gray-900 mb-2">Mengetahui Status & Bagian</h3>
+                            <p class="text-gray-600 text-sm">Harus jelas hubungan kekerabatannya (Status) dan berapa
+                                kadar bagiannya menurut Al-Qur'an (Furudhul Muqaddarah).</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2.3 Penghalang Waris -->
+            <section id="penghalang" class="scroll-mt-24">
+                <div class="flex items-center gap-4 mb-8">
+                    <div
+                        class="h-10 w-10 flex items-center justify-center rounded-xl bg-emerald-600 text-white font-bold shadow-lg shadow-emerald-600/20">
+                        2.3</div>
+                    <h2 class="text-2xl font-bold text-gray-900">Penghalang Waris (Mawani')</h2>
+                </div>
+
+                <div class="space-y-6">
+                    <!-- 1. Pembunuhan -->
+                    <div class="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm overflow-hidden">
+                        <div class="flex items-center gap-3 mb-4 text-red-700">
+                            <i class="ph ph-knife text-2xl"></i>
+                            <h3 class="font-bold text-lg">1. Pembunuhan (Al-Qatl)</h3>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-4">Rasulullah SAW bersabda: <em>"Tidak ada hak waris bagi
+                                pembunuh."</em> (HR. Abu Daud)</p>
+
+                        <div
+                            class="grid bg-gray-50 rounded-xl border border-gray-200 overflow-hidden text-sm divide-y sm:divide-y-0 sm:divide-x divide-gray-200 md:grid-cols-2">
+                            <div class="p-4">
+                                <strong class="text-red-700 block mb-2">Memutus Hak Waris ❌</strong>
+                                <ul class="space-y-1 text-gray-600 list-disc pl-4">
+                                    <li>Pembunuhan Sengaja (Qatl 'Amd)</li>
+                                    <li>Semi-Sengaja (Qatl Syibh 'Amd) - Mayoritas Ulama</li>
+                                    <li>Tersalah/Keliru (Qatl Khata') - Syafi'i & Hanbali</li>
+                                </ul>
+                            </div>
+                            <div class="p-4">
+                                <strong class="text-green-700 block mb-2">TIDAK Memutus Hak ✅</strong>
+                                <ul class="space-y-1 text-gray-600 list-disc pl-4">
+                                    <li>Eksekusi hukuman sah (Qishash)</li>
+                                    <li>Bela diri (Difa' 'an al-Nafs)</li>
+                                    <li>Oleh orang gila / anak kecil</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2. Beda Agama -->
+                    <div class="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm">
+                        <div class="flex items-center gap-3 mb-4 text-red-700">
+                            <i class="ph ph-hands-praying text-2xl"></i>
+                            <h3 class="font-bold text-lg">2. Perbedaan Agama</h3>
+                        </div>
+                        <blockquote class="bg-red-50 border-l-4 border-red-500 p-3 text-sm italic text-gray-700 mb-4">
+                            "Tidak saling mewarisi antara orang Islam dengan orang kafir." (HR. Bukhari & Muslim)
+                        </blockquote>
+
+                        <h4 class="font-semibold text-gray-900 text-sm mb-2">Ketentuan Khusus:</h4>
+                        <ul class="space-y-2 text-sm text-gray-600">
+                            <li class="flex gap-2"><i class="ph ph-caret-right text-red-400"></i> Orang Murtad (Keluar
+                                Islam) tidak bisa mewarisi Muslim. Hartanya masuk kas negara.</li>
+                            <li class="flex gap-2"><i class="ph ph-caret-right text-red-400"></i> Mualaf (Masuk Islam)
+                                memutuskan hubungan waris dengan keluarga non-muslim sebelumnya.</li>
+                        </ul>
+                    </div>
+
+                    <!-- 3. Perbudakan -->
+                    <div class="bg-gray-100 rounded-2xl border border-gray-200 p-6 shadow-sm opacity-70">
+                        <div class="flex items-center gap-3 mb-2 text-gray-500">
+                            <i class="ph ph-lock-key text-2xl"></i>
+                            <h3 class="font-bold text-lg">3. Perbudakan (Al-Riqq)</h3>
+                        </div>
+                        <p class="text-xs text-gray-500">Seorang budak tidak memiliki hak milik penuh, hartanya milik
+                            tuannya. (Konteks historis).</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2.4 Urutan Penyelesaian -->
+            <section id="urutan" class="scroll-mt-24">
+                <div class="flex items-center gap-4 mb-8">
+                    <div
+                        class="h-10 w-10 flex items-center justify-center rounded-xl bg-emerald-600 text-white font-bold shadow-lg shadow-emerald-600/20">
+                        2.4</div>
+                    <h2 class="text-2xl font-bold text-gray-900">Urutan Penyelesaian Harta</h2>
+                </div>
+
+                <div class="space-y-4">
+                    <!-- Step 1 -->
+                    <div class="glass-card p-6 rounded-2xl border border-gray-200 hover:shadow-md transition-shadow">
+                        <div class="flex gap-4">
+                            <div
+                                class="w-10 h-10 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold">
+                                1</div>
+                            <div>
+                                <h3 class="text-lg font-bold text-gray-900">Biaya Jenazah (Tajhiz)</h3>
+                                <p class="text-sm text-gray-600 mt-1">Kafan, pemakaman, transportasi. Diambil pertama
+                                    kali. <span class="italic text-gray-400">(Wajar & Tidak Mewah)</span></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="glass-card p-6 rounded-2xl border border-gray-200 hover:shadow-md transition-shadow">
+                        <div class="flex gap-4">
+                            <div
+                                class="w-10 h-10 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold">
+                                2</div>
+                            <div class="w-full">
+                                <h3 class="text-lg font-bold text-gray-900">Pelunasan Hutang</h3>
+                                <p class="text-sm text-gray-600 mt-1 mb-2">Hutang wajib lunas. "Jiwa mukmin tergantung
+                                    hutangnya."</p>
+                                <div class="bg-yellow-50 p-3 rounded-lg border border-yellow-200 text-sm">
+                                    <strong class="text-yellow-800">Prioritas:</strong>
+                                    <ol class="list-decimal pl-5 text-gray-700 text-xs mt-1">
+                                        <li>Hutang pada Allah (Zakat, Fidyah)</li>
+                                        <li>Hutang pada Manusia</li>
+                                    </ol>
+                                    <p class="text-xs mt-2 text-gray-500 italic">Jika harta kurang, hutang dibayar
+                                        proporsional.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="glass-card p-6 rounded-2xl border border-gray-200 hover:shadow-md transition-shadow">
+                        <div class="flex gap-4">
+                            <div
+                                class="w-10 h-10 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold">
+                                3</div>
+                            <div class="w-full">
+                                <h3 class="text-lg font-bold text-gray-900">Wasiat</h3>
+                                <p class="text-sm text-gray-600 mt-1 mb-2">Untuk amal jariyah atau kerabat non-ahli
+                                    waris.</p>
+                                <div class="grid grid-cols-2 gap-2 text-xs">
+                                    <div class="bg-emerald-50 px-3 py-2 rounded text-emerald-800">✅ Maksimal 1/3 Harta
+                                        Bersih</div>
+                                    <div class="bg-red-50 px-3 py-2 rounded text-red-800">❌ Tidak untuk Ahli Waris</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="bg-emerald-600 p-6 rounded-2xl shadow-lg shadow-emerald-200">
+                        <div class="flex gap-4 text-white">
+                            <div class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center font-bold">
+                                <i class="ph ph-check"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold">4. Pembagian Waris</h3>
+                                <p class="text-sm opacity-90 mt-1">Sisa harta dibagikan kepada ahli waris sesuai Syariat
+                                    Faraidh.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2.5 Kapan Warisan Dibagi -->
+            <section id="waktu" class="scroll-mt-24">
+                <div class="flex items-center gap-4 mb-8">
+                    <div
+                        class="h-10 w-10 flex items-center justify-center rounded-xl bg-emerald-600 text-white font-bold shadow-lg shadow-emerald-600/20">
+                        2.5</div>
+                    <h2 class="text-2xl font-bold text-gray-900">Kapan Warisan Dibagi?</h2>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-white p-6 rounded-2xl border border-gray-200">
+                        <h3 class="font-bold text-gray-900 mb-2">Secara Hukum</h3>
+                        <p class="text-sm text-gray-600">Kepemilikan berpindah <strong>OTOMATIS</strong> detik itu juga
+                            saat pewaris meninggal.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl border border-gray-200">
+                        <h3 class="font-bold text-gray-900 mb-2">Secara Fisik</h3>
+                        <p class="text-sm text-gray-600">Disegerakan setelah urusan jenazah/hutang beres. <br><em
+                                class="text-xs text-red-500">Menunda tanpa alasan = Dosa.</em></p>
+                    </div>
+                </div>
+
+                <div
+                    class="mt-4 bg-blue-50 p-4 rounded-xl border border-blue-100 flex gap-3 text-sm text-blue-900 items-start">
+                    <i class="ph ph-info text-xl"></i>
+                    <p><strong>Aset Tak Terbagi (Rumah):</strong> Bisa dijual lalu uangnya dibagi, atau dimiliki bersama
+                        dengan proporsi saham sesuai waris.</p>
+                </div>
+            </section>
+
+            <!-- Latihan Pemahaman -->
+            <section id="latihan" class="scroll-mt-24 border-t border-gray-200 pt-16">
+                <h2 class="text-2xl font-bold text-gray-900 mb-8 text-center flex items-center justify-center gap-2">
+                    <i class="ph ph-exam text-emerald-600"></i> Latihan Pemahaman
+                </h2>
+
+                <div class="grid gap-6">
+                    <!-- Soal 1 -->
+                    <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                        <div class="p-5 border-b border-gray-100 bg-gray-50 flex justify-between items-center">
+                            <h4 class="font-bold text-gray-800">Studi Kasus 1: Beda Agama</h4>
+                            <span class="text-xs font-bold bg-gray-200 px-2 py-1 rounded">Logika</span>
+                        </div>
+                        <div class="p-5">
+                            <p class="text-gray-600 text-sm mb-4">Pak Ahmad wafat meninggalkan istri (Muslim) dan anak
+                                laki-laki yang sudah Murtad. Siapa yang mewarisi?</p>
+                            <details class="group">
+                                <summary
+                                    class="cursor-pointer text-emerald-600 font-semibold text-sm hover:underline flex items-center gap-1">
+                                    <span class="group-open:hidden">Lihat Jawaban</span>
+                                    <span class="hidden group-open:inline">Sembunyikan</span>
+                                </summary>
+                                <div class="mt-3 text-sm bg-emerald-50 p-3 rounded-lg text-emerald-900">
+                                    <strong>Jawab:</strong> Hanya Istri. Anak yang murtad terhalang (Mawani') karena
+                                    perbedaan agama.
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+
+                    <!-- Soal 2 -->
+                    <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                        <div class="p-5 border-b border-gray-100 bg-gray-50 flex justify-between items-center">
+                            <h4 class="font-bold text-gray-800">Studi Kasus 2: Hitung Sisa</h4>
+                            <span class="text-xs font-bold bg-gray-200 px-2 py-1 rounded">Matematika</span>
+                        </div>
+                        <div class="p-5">
+                            <p class="text-gray-600 text-sm mb-4">
+                                Harta: 100 Juta<br>
+                                Hutang: 30 Juta<br>
+                                Biaya Jenazah: 5 Juta<br>
+                                Wasiat: 20 Juta<br>
+                                <strong>Berapa Harta Waris?</strong>
+                            </p>
+                            <details class="group">
+                                <summary
+                                    class="cursor-pointer text-emerald-600 font-semibold text-sm hover:underline flex items-center gap-1">
+                                    <span class="group-open:hidden">Lihat Jawaban</span>
+                                    <span class="hidden group-open:inline">Sembunyikan</span>
+                                </summary>
+                                <div
+                                    class="mt-3 text-sm bg-emerald-50 p-3 rounded-lg text-emerald-900 border border-emerald-100">
+                                    <strong>Jawab: 45 Juta</strong><br>
+                                    1. Sisa setelah Jenazah & Hutang: 100 - 5 - 30 = 65 Juta<br>
+                                    2. Wasiat 20 Juta (Valid, karena < 1/3 dari 65 Juta? Tunggu.. 1/3 dari 65=21.6 Juta.
+                                        Ya, Valid).<br>
+                                        3. Final: 65 - 20 = 45 Juta.
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Doa Penutup -->
+            <div class="text-center max-w-2xl mx-auto italic text-gray-500 my-12 font-serif text-lg">
+                "Ya Allah, jadikanlah kami orang-orang yang adil dalam membagi warisan, dan jauhkanlah kami dari memakan
+                harta orang lain secara bathil. Amin."
+            </div>
+
+            <!-- Navigation Buttons -->
+            <div class="flex justify-between items-center pt-8 border-t border-gray-200">
+                <a href="bab1.html"
+                    class="group flex items-center gap-2 px-6 py-3 rounded-lg font-medium bg-white border border-gray-200 text-gray-600 hover:border-emerald-300 hover:text-emerald-600 transition-all">
+                    <i class="ph ph-arrow-left group-hover:-translate-x-1 transition-transform"></i>
+                    Sebelumnya (Bab 1)
+                </a>
+
+                <a href="bab3.html"
+                    class="group flex items-center gap-3 px-6 py-4 bg-gradient-to-r from-emerald-600 to-teal-500 text-white rounded-xl shadow-lg hover:shadow-emerald-500/30 hover:-translate-y-1 transition-all">
+                    <div class="text-left">
+                        <span class="block text-xs font-medium opacity-90">Lanjut ke Bab 3</span>
+                        <span class="font-bold">Ahli Waris</span>
+                    </div>
+                    <i class="ph ph-arrow-right text-xl group-hover:translate-x-1 transition-transform"></i>
+                </a>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-850 text-gray-300 py-16 border-t border-gray-800">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center gap-2 mb-6">
+                        <span class="text-3xl">☪️</span>
+                        <span class="font-bold text-2xl text-white">Faraidh<span
+                                class="text-emerald-500">Ku</span></span>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed max-w-sm">
+                        Platform edukasi dan kalkulasi waris Islam terpercaya. Membantu ummat membagi harta dengan adil,
+                        transparan, dan sesuai syariat.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-6 uppercase text-xs tracking-widest text-emerald-500">Pintasan
+                    </h4>
+                    <ul class="space-y-4 text-sm">
+                        <li><a href="../index.html"
+                                class="hover:text-emerald-400 transition-colors flex items-center gap-2"><i
+                                    class="ph ph-house"></i> Beranda</a></li>
+                        <li><a href="index.html"
+                                class="hover:text-emerald-400 transition-colors flex items-center gap-2"><i
+                                    class="ph ph-book-bookmark"></i> Materi Belajar</a></li>
+                        <li><a href="../calculator/index.html"
+                                class="hover:text-emerald-400 transition-colors flex items-center gap-2"><i
+                                    class="ph ph-calculator"></i> Kalkulator</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-6 uppercase text-xs tracking-widest text-emerald-500">Bab Materi
+                    </h4>
+                    <ul class="space-y-4 text-sm">
+                        <li><a href="bab1.html"
+                                class="hover:text-emerald-400 transition-colors flex items-center gap-2"><i
+                                    class="ph ph-check-circle"></i> Prinsip Dasar</a></li>
+                        <li><a href="bab2.html" class="text-emerald-400 font-medium flex items-center gap-2"><i
+                                    class="ph ph-check-circle"></i> Rukun & Syarat</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div
+                class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500 gap-4">
+                <p>&copy; 2025 FaraidhKu. Open Source & Non-Profit.</p>
+                <div class="flex gap-6">
+                    <a href="#" class="hover:text-emerald-500 transition-colors">Privacy</a>
+                    <a href="#" class="hover:text-emerald-500 transition-colors">Terms</a>
+                    <a href="#" class="hover:text-emerald-500 transition-colors">About</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

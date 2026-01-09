@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bab 3: Ahli Waris & Bagiannya - FaraidhKu</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Outfit:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        emerald: { 50: '#ecfdf5', 100: '#d1fae5', 600: '#059669', 700: '#047857', 800: '#065f46', 900: '#064e3b' },
+                        slate: { 850: '#151f2e' }
+                    },
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                        serif: ['Amiri', 'serif']
+                    },
+                    backgroundImage: {
+                        'grid-pattern': "radial-gradient(rgba(5, 150, 105, 0.1) 1px, transparent 1px)",
+                    },
+                    backgroundSize: {
+                        'grid-pattern': '24px 24px',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(229, 231, 235, 0.6);
+        }
+
+        .text-arabic {
+            font-family: 'Amiri', serif;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800 font-sans antialiased selection:bg-emerald-200 selection:text-emerald-900">
+
+    <!-- Navigation -->
+    <nav
+        class="bg-white/90 backdrop-blur-md sticky top-0 z-50 border-b border-gray-100 shadow-sm transition-all duration-300">
+        <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+            <a href="index.html"
+                class="flex items-center gap-2 text-gray-600 hover:text-emerald-600 transition-colors group">
+                <div class="p-1.5 rounded-lg group-hover:bg-emerald-50 transition-colors">
+                    <i class="ph ph-arrow-left text-xl"></i>
+                </div>
+                <span class="font-medium">Daftar Materi</span>
+            </a>
+            <div
+                class="flex items-center gap-2 text-sm font-semibold bg-emerald-50 text-emerald-700 px-3 py-1 rounded-full border border-emerald-100">
+                <span>Bab 3</span>
+                <span class="h-1 w-1 bg-emerald-400 rounded-full"></span>
+                <span class="text-emerald-600/70">4 Bab</span>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <header class="relative pt-16 pb-24 overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-b from-emerald-50/80 to-transparent z-0"></div>
+            <div class="absolute inset-0 bg-grid-pattern z-0 opacity-50"></div>
+
+            <div class="relative z-10 max-w-4xl mx-auto px-4 text-center">
+                <span
+                    class="inline-block py-1 px-3 rounded-full bg-white border border-emerald-100 text-emerald-600 text-sm font-semibold mb-6 shadow-sm">
+                    👥 Mengenal Keluarga
+                </span>
+                <h1 class="font-serif text-5xl md:text-6xl text-gray-900 mb-6 leading-tight">
+                    Daftar Ahli Waris <br>
+                    <span class="text-emerald-600 italic">& Bagiannya</span>
+                </h1>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+                    Mengetahui 25 golongan penerima waris, membedakan siapa yang mendapat bagian pasti (Fardh) dan sisa
+                    (Ashabah).
+                </p>
+            </div>
+        </header>
+
+        <div class="max-w-5xl mx-auto px-4 pb-24 space-y-24">
+
+            <!-- 3.1 Klasifikasi -->
+            <section id="klasifikasi" class="scroll-mt-24">
+                <div class="flex items-center gap-4 mb-8">
+                    <div
+                        class="h-10 w-10 flex items-center justify-center rounded-xl bg-emerald-600 text-white font-bold shadow-lg shadow-emerald-600/20">
+                        3.1</div>
+                    <h2 class="text-2xl font-bold text-gray-900">3 Kelompok Utama Ahli Waris</h2>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-6">
+                    <!-- Ashabul Furudh -->
+                    <div
+                        class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:border-emerald-300 transition-colors group">
+                        <div
+                            class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform">
+                            <i class="ph ph-chart-pie-slice"></i>
+                        </div>
+                        <h3 class="font-bold text-gray-900 mb-1">1. Ashabul Furudh</h3>
+                        <p class="text-xs text-emerald-600 font-serif mb-3">Ahli Bagian Pasti</p>
+                        <p class="text-sm text-gray-600">
+                            Penerima prioritas dengan bagian pecahan yang ditetapkan Al-Qur'an (1/2, 1/4, 1/8, dst).
+                            <br><span class="text-xs text-gray-400 mt-2 block">Contoh: Ibu, Istri, Suami.</span>
+                        </p>
+                    </div>
+
+                    <!-- Ashabah -->
+                    <div
+                        class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:border-emerald-300 transition-colors group">
+                        <div
+                            class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform">
+                            <i class="ph ph-users-three"></i>
+                        </div>
+                        <h3 class="font-bold text-gray-900 mb-1">2. Ashabah</h3>
+                        <p class="text-xs text-blue-600 font-serif mb-3">Ahli Sisa</p>
+                        <p class="text-sm text-gray-600">
+                            Penerima seluruh sisa harta setelah Ashabul Furudh mengambil bagiannya. Bisa habis jika
+                            tidak ada sisa.
+                            <br><span class="text-xs text-gray-400 mt-2 block">Contoh: Anak Laki-laki, Ayah.</span>
+                        </p>
+                    </div>
+
+                    <!-- Dzawil Arham -->
+                    <div
+                        class="bg-gray-50 p-6 rounded-2xl border border-gray-100 shadow-sm opacity-80 hover:opacity-100 transition-opacity group">
+                        <div
+                            class="w-12 h-12 bg-gray-200 text-gray-600 rounded-xl flex items-center justify-center text-2xl mb-4">
+                            <i class="ph ph-users"></i>
+                        </div>
+                        <h3 class="font-bold text-gray-900 mb-1">3. Dzawil Arham</h3>
+                        <p class="text-xs text-gray-600 font-serif mb-3">Kerabat Jauh</p>
+                        <p class="text-sm text-gray-600">
+                            Baru mewarisi jika <strong>TIDAK ADA</strong> Ashabul Furudh maupun Ashabah (jarang
+                            terjadi).
+                            <br><span class="text-xs text-gray-400 mt-2 block">Contoh: Cucu dari anak perempuan, Paman
+                                dari Ibu.</span>
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3.2 & 3.3 Daftar Ahli Waris -->
+            <section id="daftar-ahli-waris" class="scroll-mt-24">
+                <div class="flex items-center gap-4 mb-8">
+                    <div
+                        class="h-10 w-10 flex items-center justify-center rounded-xl bg-emerald-600 text-white font-bold shadow-lg shadow-emerald-600/20">
+                        3.2</div>
+                    <h2 class="text-2xl font-bold text-gray-900">Total 25 Ahli Waris</h2>
+                </div>
+
+                <div class="glass-card rounded-2xl overflow-hidden border border-gray-200 text-sm">
+                    <div class="grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-gray-200">
+                        <!-- Laki-laki -->
+                        <div class="p-6">
+                            <h3 class="font-bold text-blue-700 mb-4 flex items-center gap-2">
+                                <i class="ph ph-gender-male text-lg"></i> 15 Ahli Waris Laki-laki
+                            </h3>
+                            <ul class="space-y-2 text-gray-600">
+                                <li class="flex gap-2 items-start"><span
+                                        class="text-gray-300 font-mono text-xs w-4">01</span> <span>Anak
+                                        Laki-laki</span></li>
+                                <li class="flex gap-2 items-start"><span
+                                        class="text-gray-300 font-mono text-xs w-4">02</span> <span>Cucu Laki-laki <span
+                                            class="text-xs text-gray-400">(dari anak lk)</span></span></li>
+                                <li class="flex gap-2 items-start"><span
+                                        class="text-gray-300 font-mono text-xs w-4">03</span> <span>Ayah</span></li>
+                                <li class="flex gap-2 items-start"><span
+                                        class="text-gray-300 font-mono text-xs w-4">04</span> <span>Kakek <span
+                                            class="text-xs text-gray-400">(dari ayah)</span></span></li>
+                                <li class="flex gap-2 items-start"><span
+                                        class="text-gray-300 font-mono text-xs w-4">05</span> <span>Saudara Laki-laki
+                                        Sekandung</span></li>
+                                <li class="flex gap-2 items-start"><span
+                                        class="text-gray-300 font-mono text-xs w-4">06</span> <span>Saudara Laki-laki
+                                        Seayah</span></li>
+                                <li class="flex gap-2 items-start"><span
+                                        class="text-gray-300 font-mono text-xs w-4">07</span> <span>Saudara Laki-laki
+                                        Seibu</span></li>
+                                <li class="flex gap-2 items-start"><span
+                                        class="text-gray-300 font-mono text-xs w-4">08</span> <span>Keponakan Lk <span
+                                            class="text-xs text-gray-400">(dari sdr sekandung)</span></span></li>
+                                <li class="flex gap-2 items-start"><span
+                                        class="text-gray-300 font-mono text-xs w-4">09</span> <span>Keponakan Lk <span
+                                            class="text-xs text-gray-400">(dari sdr seayah)</span></span></li>
+                                <li class="flex gap-2 items-start"><span
+                                        class="text-gray-300 font-mono text-xs w-4">10</span> <span>Paman Sekandung
+                                        <span class="text-xs text-gray-400">(saudara ayah)</span></span></li>
+                                <li class="flex gap-2 items-start"><span
+                                        class="text-gray-300 font-mono text-xs w-4">11</span> <span>Paman Seayah <span
+                                            class="text-xs text-gray-400">(saudara ayah)</span></span></li>
+                                <li class="flex gap-2 items-start"><span
+                                        class="text-gray-300 font-mono text-xs w-4">12</span> <span>Sepupu Lk <span
+                                            class="text-xs text-gray-400">(anak paman sekandung)</span></span></li>
+                                <li class="flex gap-2 items-start"><span
+                                        class="text-gray-300 font-mono text-xs w-4">13</span> <span>Sepupu Lk <span
+                                            class="text-xs text-gray-400">(anak paman seayah)</span></span></li>
+                                <li class="flex gap-2 items-start"><span
+                                        class="text-gray-300 font-mono text-xs w-4">14</span> <span>Suami</span></li>
+                                <li class="flex gap-2 items-start"><span
+                                        class="text-gray-300 font-mono text-xs w-4">15</span> <span>Pembebas Budak
+                                        (Mu'tiq)</span></li>
+                            </ul>
+                        </div>
+
+                        <!-- Perempuan -->
+                        <div class="p-6 bg-rose-50/20">
+                            <h3 class="font-bold text-rose-700 mb-4 flex items-center gap-2">
+                                <i class="ph ph-gender-female text-lg"></i> 10 Ahli Waris Perempuan
+                            </h3>
+                            <ul class="space-y-2 text-gray-600">
+                                <li class="flex gap-2 items-start"><span
+                                        class="text-gray-300 font-mono text-xs w-4">01</span> <span>Anak
+                                        Perempuan</span></li>
+                                <li class="flex gap-2 items-start"><span
+                                        class="text-gray-300 font-mono text-xs w-4">02</span> <span>Cucu Perempuan <span
+                                            class="text-xs text-gray-400">(dari anak lk)</span></span></li>
+                                <li class="flex gap-2 items-start"><span
+                                        class="text-gray-300 font-mono text-xs w-4">03</span> <span>Ibu</span></li>
+                                <li class="flex gap-2 items-start"><span
+                                        class="text-gray-300 font-mono text-xs w-4">04</span> <span>Nenek <span
+                                            class="text-xs text-gray-400">(dari ibu)</span></span></li>
+                                <li class="flex gap-2 items-start"><span
+                                        class="text-gray-300 font-mono text-xs w-4">05</span> <span>Nenek <span
+                                            class="text-xs text-gray-400">(dari ayah)</span></span></li>
+                                <li class="flex gap-2 items-start"><span
+                                        class="text-gray-300 font-mono text-xs w-4">06</span> <span>Saudara Perempuan
+                                        Sekandung</span></li>
+                                <li class="flex gap-2 items-start"><span
+                                        class="text-gray-300 font-mono text-xs w-4">07</span> <span>Saudara Perempuan
+                                        Seayah</span></li>
+                                <li class="flex gap-2 items-start"><span
+                                        class="text-gray-300 font-mono text-xs w-4">08</span> <span>Saudara Perempuan
+                                        Seibu</span></li>
+                                <li class="flex gap-2 items-start"><span
+                                        class="text-gray-300 font-mono text-xs w-4">09</span> <span>Istri</span></li>
+                                <li class="flex gap-2 items-start"><span
+                                        class="text-gray-300 font-mono text-xs w-4">10</span> <span>Pembebas Budak
+                                        (Mu'tiqah)</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3.4 & 3.5 Detail Bagian (The Heavy Content) -->
+            <section id="detail-bagian" class="scroll-mt-24">
+                <div class="flex items-center gap-4 mb-8">
+                    <div
+                        class="h-10 w-10 flex items-center justify-center rounded-xl bg-emerald-600 text-white font-bold shadow-lg shadow-emerald-600/20">
+                        3.3</div>
+                    <h2 class="text-2xl font-bold text-gray-900">Rincian Bagian Ashabul Furudh</h2>
+                </div>
+
+                <div class="space-y-8">
+
+                    <!-- Pasangan (Suami/Istri) -->
+                    <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm">
+                        <div class="bg-gray-50 px-6 py-4 border-b border-gray-100 flex items-center gap-2">
+                            <div
+                                class="w-8 h-8 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center">
+                                <i class="ph ph-heart"></i>
+                            </div>
+                            <h3 class="font-bold text-gray-900">Pasangan (Suami / Istri)</h3>
+                        </div>
+                        <div class="grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-gray-100">
+                            <div class="p-6">
+                                <h4 class="font-bold text-emerald-800 text-sm uppercase tracking-wider mb-4">Bagian
+                                    Suami</h4>
+                                <ul class="space-y-4">
+                                    <li class="flex justify-between items-center group">
+                                        <span class="text-sm text-gray-600">Istri tidak punya anak</span>
+                                        <span
+                                            class="font-mono font-bold bg-emerald-50 text-emerald-600 px-3 py-1 rounded-lg">1/2</span>
+                                    </li>
+                                    <!-- Divider -->
+                                    <div class="h-px bg-gray-100 w-full"></div>
+                                    <li class="flex justify-between items-center group">
+                                        <span class="text-sm text-gray-600">Istri punya anak/cucu</span>
+                                        <span
+                                            class="font-mono font-bold bg-emerald-50 text-emerald-600 px-3 py-1 rounded-lg">1/4</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="p-6">
+                                <h4 class="font-bold text-emerald-800 text-sm uppercase tracking-wider mb-4">Bagian
+                                    Istri</h4>
+                                <ul class="space-y-4">
+                                    <li class="flex justify-between items-center group">
+                                        <span class="text-sm text-gray-600">Suami tidak punya anak</span>
+                                        <span
+                                            class="font-mono font-bold bg-emerald-50 text-emerald-600 px-3 py-1 rounded-lg">1/4</span>
+                                    </li>
+                                    <!-- Divider -->
+                                    <div class="h-px bg-gray-100 w-full"></div>
+                                    <li class="flex justify-between items-center group">
+                                        <span class="text-sm text-gray-600">Suami punya anak/cucu</span>
+                                        <span
+                                            class="font-mono font-bold bg-emerald-50 text-emerald-600 px-3 py-1 rounded-lg">1/8</span>
+                                    </li>
+                                </ul>
+                                <p class="text-xs text-gray-400 mt-4 italic">*Jika istri > 1, bagian dibagi rata.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Anak Perempuan & Cucu Pr -->
+                    <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm">
+                        <div class="bg-gray-50 px-6 py-4 border-b border-gray-100 flex items-center gap-2">
+                            <div
+                                class="w-8 h-8 rounded-full bg-rose-100 text-rose-600 flex items-center justify-center">
+                                <i class="ph ph-baby"></i>
+                            </div>
+                            <h3 class="font-bold text-gray-900">Anak & Cucu Perempuan</h3>
+                        </div>
+                        <div class="p-6">
+                            <ul class="space-y-3">
+                                <li class="flex items-center gap-4 p-3 rounded-lg hover:bg-gray-50 transition-colors">
+                                    <div
+                                        class="bg-rose-50 text-rose-600 font-mono font-bold px-3 py-1.5 rounded text-sm w-12 text-center">
+                                        1/2</div>
+                                    <div class="text-sm text-gray-700">Jika sendirian (tunggal).</div>
+                                </li>
+                                <li class="flex items-center gap-4 p-3 rounded-lg hover:bg-gray-50 transition-colors">
+                                    <div
+                                        class="bg-rose-50 text-rose-600 font-mono font-bold px-3 py-1.5 rounded text-sm w-12 text-center">
+                                        2/3</div>
+                                    <div class="text-sm text-gray-700">Jika 2 orang atau lebih (dibagi rata).</div>
+                                </li>
+                                <li class="flex items-center gap-4 p-3 rounded-lg hover:bg-gray-50 transition-colors">
+                                    <div
+                                        class="bg-blue-50 text-blue-600 font-bold px-3 py-1.5 rounded text-xs w-12 text-center leading-tight">
+                                        Sisa<br>(2:1)</div>
+                                    <div class="text-sm text-gray-700">Jika bersama saudara laki-lakinya (menjadi
+                                        Ashabah).</div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Ayah & Ibu -->
+                    <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm">
+                        <div class="bg-gray-50 px-6 py-4 border-b border-gray-100 flex items-center gap-2">
+                            <div
+                                class="w-8 h-8 rounded-full bg-amber-100 text-amber-600 flex items-center justify-center">
+                                <i class="ph ph-users"></i>
+                            </div>
+                            <h3 class="font-bold text-gray-900">Orang Tua (Ayah & Ibu)</h3>
+                        </div>
+                        <div class="grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-gray-100">
+                            <div class="p-6">
+                                <h4 class="font-bold text-emerald-800 text-sm uppercase tracking-wider mb-4">Ayah</h4>
+                                <ul class="space-y-4 text-sm">
+                                    <li class="flex justify-between"><span>Ada anak Laki-laki</span> <span
+                                            class="font-bold text-gray-900">1/6</span></li>
+                                    <li class="flex justify-between"><span>Ada anak Perempuan</span> <span
+                                            class="font-bold text-gray-900">1/6 + Sisa</span></li>
+                                    <li class="flex justify-between"><span>Tidak ada anak</span> <span
+                                            class="font-bold text-gray-900">Semua Sisa (Ashabah)</span></li>
+                                </ul>
+                            </div>
+                            <div class="p-6">
+                                <h4 class="font-bold text-emerald-800 text-sm uppercase tracking-wider mb-4">Ibu</h4>
+                                <ul class="space-y-4 text-sm">
+                                    <li class="flex justify-between"><span>Ada anak / 2 sdr</span> <span
+                                            class="font-bold text-gray-900">1/6</span></li>
+                                    <li class="flex justify-between"><span>Tidak ada anak & sdr</span> <span
+                                            class="font-bold text-gray-900">1/3</span></li>
+                                    <li class="flex justify-between"><span>Kasus Umariyah</span> <span
+                                            class="font-bold text-gray-900">1/3 Sisa</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Kakek & Nenek -->
+                    <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm">
+                        <div class="bg-gray-50 px-6 py-4 border-b border-gray-100 flex items-center gap-2">
+                            <div
+                                class="w-8 h-8 rounded-full bg-orange-100 text-orange-600 flex items-center justify-center">
+                                <i class="ph ph-hourglass-high"></i>
+                            </div>
+                            <h3 class="font-bold text-gray-900">Kakek & Nenek</h3>
+                        </div>
+                        <div class="grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-gray-100">
+                            <div class="p-6">
+                                <h4 class="font-bold text-emerald-800 text-sm uppercase tracking-wider mb-4">Kakek
+                                    (Jalur Ayah)</h4>
+                                <ul class="space-y-4 text-sm">
+                                    <li class="flex justify-between"><span>Tidak ada Ayah</span> <span
+                                            class="font-bold text-gray-900">Menggantikan Ayah</span></li>
+                                    <li class="flex justify-between"><span>Ada Ayah</span> <span
+                                            class="font-bold text-red-500">Terhalang</span></li>
+                                </ul>
+                                <p class="text-xs text-gray-400 mt-4 italic">*Kakek Shahih (tidak terputus ibu).</p>
+                            </div>
+                            <div class="p-6">
+                                <h4 class="font-bold text-emerald-800 text-sm uppercase tracking-wider mb-4">Nenek
+                                    (Ibu/Ayah)</h4>
+                                <ul class="space-y-4 text-sm">
+                                    <li class="flex justify-between"><span>Tidak ada Ibu</span> <span
+                                            class="font-bold text-gray-900">1/6</span></li>
+                                    <li class="flex justify-between"><span>Ada Ibu</span> <span
+                                            class="font-bold text-red-500">Terhalang</span></li>
+                                </ul>
+                                <p class="text-xs text-gray-400 mt-4 italic">*Jika > 1 nenek sederajat, 1/6 dibagi rata.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Saudara Sekandung -->
+                    <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm">
+                        <div class="bg-gray-50 px-6 py-4 border-b border-gray-100 flex items-center gap-2">
+                            <div
+                                class="w-8 h-8 rounded-full bg-purple-100 text-purple-600 flex items-center justify-center">
+                                <i class="ph ph-users-three"></i>
+                            </div>
+                            <h3 class="font-bold text-gray-900">Saudara Sekandung</h3>
+                        </div>
+                        <div class="grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-gray-100">
+                            <div class="p-6">
+                                <h4 class="font-bold text-emerald-800 text-sm uppercase tracking-wider mb-4">Saudara
+                                    Laki-laki</h4>
+                                <ul class="space-y-4 text-sm">
+                                    <li class="flex justify-between"><span>Sdr / Brsm Lk lain</span> <span
+                                            class="font-bold text-gray-900">Sisa (Ashabah)</span></li>
+                                    <li class="flex justify-between"><span>Brsm Pr Sekandung</span> <span
+                                            class="font-bold text-gray-900">Sisa (2:1)</span></li>
+                                    <li class="flex justify-between"><span>Ada Ayah/Anak Lk</span> <span
+                                            class="font-bold text-red-500">Terhalang</span></li>
+                                </ul>
+                            </div>
+                            <div class="p-6">
+                                <h4 class="font-bold text-emerald-800 text-sm uppercase tracking-wider mb-4">Saudara
+                                    Perempuan</h4>
+                                <ul class="space-y-4 text-sm">
+                                    <li class="flex justify-between"><span>Sendirian</span> <span
+                                            class="font-bold text-gray-900">1/2</span></li>
+                                    <li class="flex justify-between"><span>2 orang / lebih</span> <span
+                                            class="font-bold text-gray-900">2/3 (Bagi Rata)</span></li>
+                                    <li class="flex justify-between"><span>Ada Anak Pr/Cucu Pr</span> <span
+                                            class="font-bold text-gray-900">Sisa (Ashabah)</span></li>
+                                    <li class="flex justify-between"><span>Ada Ayah/Anak Lk</span> <span
+                                            class="font-bold text-red-500">Terhalang</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Saudara Seayah & Seibu -->
+                    <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm">
+                        <div class="bg-gray-50 px-6 py-4 border-b border-gray-100 flex items-center gap-2">
+                            <div
+                                class="w-8 h-8 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center">
+                                <i class="ph ph-users"></i>
+                            </div>
+                            <h3 class="font-bold text-gray-900">Saudara Seayah & Seibu</h3>
+                        </div>
+                        <div class="grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-gray-100">
+                            <div class="p-6">
+                                <h4 class="font-bold text-emerald-800 text-sm uppercase tracking-wider mb-4">Saudara
+                                    Seayah (Lk/Pr)</h4>
+                                <p class="text-xs text-gray-500 mb-3">Mirip Saudara Sekandung (Prioritas ke-2).</p>
+                                <ul class="space-y-2 text-sm">
+                                    <li class="flex justify-between"><span>Tdk ada Sdr Sekandung</span> <span
+                                            class="font-bold text-gray-900">Idem Sekandung</span></li>
+                                    <li class="flex justify-between"><span>Ada Sdr Lk Sekandung</span> <span
+                                            class="font-bold text-red-500">Terhalang</span></li>
+                                    <li class="flex justify-between text-xs text-gray-500 italic">Pr Seayah + 1 Pr
+                                        Sekandung = 1/6 (Penyempurna 2/3)</li>
+                                </ul>
+                            </div>
+                            <div class="p-6">
+                                <h4 class="font-bold text-emerald-800 text-sm uppercase tracking-wider mb-4">Saudara
+                                    Seibu (Lk/Pr)</h4>
+                                <p class="text-xs text-gray-500 mb-3"><strong class="text-emerald-600">UNIK:</strong>
+                                    Laki-laki & Perempuan bagiannya SAMA.</p>
+                                <ul class="space-y-4 text-sm">
+                                    <li class="flex justify-between"><span>1 Orang</span> <span
+                                            class="font-bold text-gray-900">1/6</span></li>
+                                    <li class="flex justify-between"><span>2 Orang / Lebih</span> <span
+                                            class="font-bold text-gray-900">1/3 (Bagi Rata)</span></li>
+                                    <li class="flex justify-between"><span>Ada Anak/Ayah/Kakek</span> <span
+                                            class="font-bold text-red-500">Terhalang</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- Anak & Cucu Laki-laki (Ashabah) -->
+                    <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm">
+                        <div class="bg-gray-50 px-6 py-4 border-b border-gray-100 flex items-center gap-2">
+                            <div
+                                class="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center">
+                                <i class="ph ph-user-gear"></i></div>
+                            <h3 class="font-bold text-gray-900">Anak & Cucu Laki-laki (Ashabah)</h3>
+                        </div>
+                        <div class="grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-gray-100">
+                            <div class="p-6">
+                                <h4 class="font-bold text-emerald-800 text-sm uppercase tracking-wider mb-4">Anak
+                                    Laki-laki</h4>
+                                <ul class="space-y-4 text-sm">
+                                    <li class="flex justify-between"><span>Sendirian</span> <span
+                                            class="font-bold text-gray-900">100% Harta (Ashabah)</span></li>
+                                    <li class="flex justify-between"><span>Ada Ashabul Furudh</span> <span
+                                            class="font-bold text-gray-900">Sisa Harta</span></li>
+                                    <li class="flex justify-between"><span>Ada Anak Perempuan</span> <span
+                                            class="font-bold text-gray-900">Sisa (2:1)</span></li>
+                                </ul>
+                                <p class="text-xs text-red-500 mt-4 italic font-bold">! Menghalangi Cucu, Saudara, &
+                                    Paman.</p>
+                            </div>
+                            <div class="p-6">
+                                <h4 class="font-bold text-emerald-800 text-sm uppercase tracking-wider mb-4">Cucu
+                                    Laki-laki</h4>
+                                <ul class="space-y-4 text-sm">
+                                    <li class="flex justify-between"><span>Tidak ada Anak Lk</span> <span
+                                            class="font-bold text-gray-900">Menggantikan Anak Lk</span></li>
+                                    <li class="flex justify-between"><span>Ada Anak Lk</span> <span
+                                            class="font-bold text-red-500">Terhalang</span></li>
+                                </ul>
+                                <p class="text-xs text-gray-400 mt-4 italic">*Dari jalur anak laki-laki.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3.6 Ringkasan Tabel Praktis -->
+            <section id="ringkasan" class="scroll-mt-24">
+                <div class="flex items-center gap-4 mb-8">
+                    <div
+                        class="h-10 w-10 flex items-center justify-center rounded-xl bg-emerald-600 text-white font-bold shadow-lg shadow-emerald-600/20">
+                        3.6</div>
+                    <h2 class="text-2xl font-bold text-gray-900">Tabel Ringkasan Praktis</h2>
+                </div>
+
+                <div
+                    class="bg-emerald-900 rounded-2xl overflow-hidden shadow-lg border border-emerald-800 text-emerald-50">
+                    <div class="p-6 border-b border-emerald-800 bg-emerald-950/30">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-lg bg-emerald-800 flex items-center justify-center"><i
+                                    class="ph ph-table text-xl"></i></div>
+                            <div>
+                                <h3 class="font-bold text-white text-lg">Ashabul Furudh Summary</h3>
+                                <p class="text-xs text-emerald-400">Panduan cepat untuk menentukan bagian pasti.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-sm text-left">
+                            <thead
+                                class="bg-emerald-950/50 text-emerald-200 uppercase text-xs font-bold tracking-wider">
+                                <tr>
+                                    <th class="px-6 py-4">Ahli Waris</th>
+                                    <th class="px-6 py-4">Bagian</th>
+                                    <th class="px-6 py-4">Syarat / Kondisi</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-emerald-800/50">
+                                <!-- Suami & Istri -->
+                                <tr class="bg-emerald-900/50 hover:bg-emerald-800/50 transition-colors">
+                                    <td class="px-6 py-4 font-medium text-white">Suami</td>
+                                    <td class="px-6 py-4"><span
+                                            class="bg-emerald-800 px-2 py-1 rounded text-white font-mono">1/2</span>
+                                        atau <span
+                                            class="bg-emerald-800 px-2 py-1 rounded text-white font-mono">1/4</span>
+                                    </td>
+                                    <td class="px-6 py-4">Tergantung ada/tidaknya anak/cucu.</td>
+                                </tr>
+                                <tr class="bg-emerald-900/50 hover:bg-emerald-800/50 transition-colors">
+                                    <td class="px-6 py-4 font-medium text-white">Istri</td>
+                                    <td class="px-6 py-4"><span
+                                            class="bg-emerald-800 px-2 py-1 rounded text-white font-mono">1/4</span>
+                                        atau <span
+                                            class="bg-emerald-800 px-2 py-1 rounded text-white font-mono">1/8</span>
+                                    </td>
+                                    <td class="px-6 py-4">Tergantung ada/tidaknya anak/cucu.</td>
+                                </tr>
+                                <!-- Ayah & Ibu -->
+                                <tr class="bg-emerald-900/50 hover:bg-emerald-800/50 transition-colors">
+                                    <td class="px-6 py-4 font-medium text-white">Ayah</td>
+                                    <td class="px-6 py-4"><span
+                                            class="bg-emerald-800 px-2 py-1 rounded text-white font-mono">1/6</span>
+                                        (+Sisa)</td>
+                                    <td class="px-6 py-4">1/6 jika ada anak Lk. Ashabah jika tdk ada anak.</td>
+                                </tr>
+                                <tr class="bg-emerald-900/50 hover:bg-emerald-800/50 transition-colors">
+                                    <td class="px-6 py-4 font-medium text-white">Ibu</td>
+                                    <td class="px-6 py-4"><span
+                                            class="bg-emerald-800 px-2 py-1 rounded text-white font-mono">1/6</span>
+                                        atau <span
+                                            class="bg-emerald-800 px-2 py-1 rounded text-white font-mono">1/3</span>
+                                    </td>
+                                    <td class="px-6 py-4">1/6 jika ada anak/2 sdr. 1/3 jika tidak.</td>
+                                </tr>
+                                <!-- Anak Pr & Cucu Pr -->
+                                <tr class="bg-emerald-900/50 hover:bg-emerald-800/50 transition-colors">
+                                    <td class="px-6 py-4 font-medium text-white">Anak Pr</td>
+                                    <td class="px-6 py-4"><span
+                                            class="bg-emerald-800 px-2 py-1 rounded text-white font-mono">1/2</span>
+                                        atau <span
+                                            class="bg-emerald-800 px-2 py-1 rounded text-white font-mono">2/3</span>
+                                    </td>
+                                    <td class="px-6 py-4">1/2 sendiri. 2/3 jika berdua/lebih. Sisa jika ada Sdr Lk.</td>
+                                </tr>
+                                <tr class="bg-emerald-900/50 hover:bg-emerald-800/50 transition-colors">
+                                    <td class="px-6 py-4 font-medium text-white">Cucu Pr (Lk)</td>
+                                    <td class="px-6 py-4"><span
+                                            class="bg-emerald-800 px-2 py-1 rounded text-white font-mono">1/2</span>,
+                                        <span class="bg-emerald-800 px-2 py-1 rounded text-white font-mono">2/3</span>,
+                                        <span class="bg-emerald-800 px-2 py-1 rounded text-white font-mono">1/6</span>
+                                    </td>
+                                    <td class="px-6 py-4">1/6 sebagai pelengkap 2/3 jika ada 1 Anak Pr.</td>
+                                </tr>
+                                <!-- Saudara -->
+                                <tr class="bg-emerald-900/50 hover:bg-emerald-800/50 transition-colors">
+                                    <td class="px-6 py-4 font-medium text-white">Sdr Pr Kandung</td>
+                                    <td class="px-6 py-4"><span
+                                            class="bg-emerald-800 px-2 py-1 rounded text-white font-mono">1/2</span>
+                                        atau <span
+                                            class="bg-emerald-800 px-2 py-1 rounded text-white font-mono">2/3</span>
+                                    </td>
+                                    <td class="px-6 py-4">Tergantung jumlah. Sisa jika ada Sdr Lk.</td>
+                                </tr>
+                                <tr class="bg-emerald-900/50 hover:bg-emerald-800/50 transition-colors">
+                                    <td class="px-6 py-4 font-medium text-white">Sdr Seibu</td>
+                                    <td class="px-6 py-4"><span
+                                            class="bg-emerald-800 px-2 py-1 rounded text-white font-mono">1/6</span>
+                                        atau <span
+                                            class="bg-emerald-800 px-2 py-1 rounded text-white font-mono">1/3</span>
+                                    </td>
+                                    <td class="px-6 py-4">1/6 sendiri. 1/3 jika berdua/lebih (Lk & Pr sama).</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3.7 Hijab (Blocking) -->
+            <section id="hijab" class="scroll-mt-24">
+                <div class="flex items-center gap-4 mb-8">
+                    <div
+                        class="h-10 w-10 flex items-center justify-center rounded-xl bg-emerald-600 text-white font-bold shadow-lg shadow-emerald-600/20">
+                        3.4</div>
+                    <h2 class="text-2xl font-bold text-gray-900">Konsep Hijab (Penghalang)</h2>
+                </div>
+
+                <div class="bg-slate-850 rounded-2xl p-8 text-gray-300 relative overflow-hidden">
+                    <!-- Background decoration -->
+                    <div
+                        class="absolute top-0 right-0 w-64 h-64 bg-emerald-500 rounded-full mix-blend-overlay filter blur-3xl opacity-10">
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-12 relative z-10">
+                        <div>
+                            <h3 class="text-white font-bold text-xl mb-4 flex items-center gap-2"><i
+                                    class="ph ph-shield-slash text-red-400"></i> Hijab Hirman</h3>
+                            <p class="text-sm leading-relaxed mb-4">Terhalang <strong>sepenuhnya</strong>, tidak dapat
+                                warisan sama sekali karena ada ahli waris yang lebih dekat.</p>
+                            <div class="bg-white/5 rounded-lg p-3 border border-white/10 text-xs">
+                                <strong class="text-white block mb-1">Contoh:</strong>
+                                Cucu terhalang oleh Anak. Kakek terhalang oleh Ayah. Saudara terhalang oleh Anak
+                                Laki-laki.
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="text-white font-bold text-xl mb-4 flex items-center gap-2"><i
+                                    class="ph ph-trend-down text-yellow-400"></i> Hijab Nuqshan</h3>
+                            <p class="text-sm leading-relaxed mb-4">Terhalang <strong>sebagian</strong>, bagiannya
+                                berkurang tapi tetap dapat.</p>
+                            <div class="bg-white/5 rounded-lg p-3 border border-white/10 text-xs">
+                                <strong class="text-white block mb-1">Contoh:</strong>
+                                Suami dari 1/2 jadi 1/4 karena ada anak. Ibu dari 1/3 jadi 1/6 karena ada anak.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 pt-6 border-t border-gray-700 text-center">
+                        <span
+                            class="inline-block bg-emerald-900 text-emerald-300 px-4 py-1 rounded-full text-xs font-bold tracking-wide">GOLDEN
+                            RULE</span>
+                        <p class="mt-3 text-white font-serif text-lg">"Yang lebih dekat kekerabatannya menghalangi yang
+                            lebih jauh."</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3.8 Contoh Kasus -->
+            <section id="contoh" class="scroll-mt-24">
+                <div class="flex items-center gap-4 mb-8">
+                    <div
+                        class="h-10 w-10 flex items-center justify-center rounded-xl bg-emerald-600 text-white font-bold shadow-lg shadow-emerald-600/20">
+                        3.5</div>
+                    <h2 class="text-2xl font-bold text-gray-900">Contoh Kasus Sederhana</h2>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <!-- Kasus 1 -->
+                    <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
+                        <h3 class="font-bold text-gray-900 mb-4 flex items-center gap-2">
+                            <span class="bg-emerald-100 text-emerald-800 text-xs px-2 py-1 rounded">Kasus 1</span>
+                            Keluarga Inti
+                        </h3>
+                        <div class="space-y-3 text-sm">
+                            <div class="flex justify-between border-b border-gray-50 pb-2">
+                                <span class="text-gray-600">Suami</span>
+                                <span class="font-bold">1/4</span>
+                            </div>
+                            <div class="flex justify-between border-b border-gray-50 pb-2">
+                                <span class="text-gray-600">Anak Laki-laki</span>
+                                <span class="font-bold">Sisa (Ashabah)</span>
+                            </div>
+                            <div class="flex justify-between border-b border-gray-50 pb-2">
+                                <span class="text-gray-600">2 Anak Perempuan</span>
+                                <span class="font-bold">Sisa (Ashabah)</span>
+                            </div>
+                            <p class="text-xs text-gray-400 mt-2 bg-gray-50 p-2 rounded">
+                                *Sisa dibagi 2:1 antara Lk dan Pr.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Kasus 2 -->
+                    <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
+                        <h3 class="font-bold text-gray-900 mb-4 flex items-center gap-2">
+                            <span class="bg-emerald-100 text-emerald-800 text-xs px-2 py-1 rounded">Kasus 2</span>
+                            Orang Tua & Anak
+                        </h3>
+                        <div class="space-y-3 text-sm">
+                            <div class="flex justify-between border-b border-gray-50 pb-2">
+                                <span class="text-gray-600">Ayah</span>
+                                <span class="font-bold">1/6 + Sisa</span>
+                            </div>
+                            <div class="flex justify-between border-b border-gray-50 pb-2">
+                                <span class="text-gray-600">Ibu</span>
+                                <span class="font-bold">1/6</span>
+                            </div>
+                            <div class="flex justify-between border-b border-gray-50 pb-2">
+                                <span class="text-gray-600">2 Anak Perempuan</span>
+                                <span class="font-bold">2/3</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Kasus 3 -->
+                    <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
+                        <h3 class="font-bold text-gray-900 mb-4 flex items-center gap-2">
+                            <span class="bg-emerald-100 text-emerald-800 text-xs px-2 py-1 rounded">Kasus 3</span>
+                            Umariyah
+                        </h3>
+                        <div class="space-y-3 text-sm">
+                            <div class="flex justify-between border-b border-gray-50 pb-2">
+                                <span class="text-gray-600">Suami</span>
+                                <span class="font-bold">1/2</span>
+                            </div>
+                            <div class="flex justify-between border-b border-gray-50 pb-2">
+                                <span class="text-gray-600">Ibu</span>
+                                <span class="font-bold">1/3 Sisa</span>
+                            </div>
+                            <div class="flex justify-between border-b border-gray-50 pb-2">
+                                <span class="text-gray-600">Ayah</span>
+                                <span class="font-bold">Sisa</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Kasus 4 -->
+                    <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
+                        <h3 class="font-bold text-gray-900 mb-4 flex items-center gap-2">
+                            <span class="bg-emerald-100 text-emerald-800 text-xs px-2 py-1 rounded">Kasus 4</span>
+                            Kalalah (Hanya Saudara)
+                        </h3>
+                        <div class="space-y-3 text-sm">
+                            <div class="flex justify-between border-b border-gray-50 pb-2">
+                                <span class="text-gray-600">2 Sdr Pr Kandung</span>
+                                <span class="font-bold">2/3</span>
+                            </div>
+                            <div class="flex justify-between border-b border-gray-50 pb-2">
+                                <span class="text-gray-600">2 Sdr Seibu</span>
+                                <span class="font-bold">1/3</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3.9 Diagram Pohon -->
+            <section id="diagram" class="scroll-mt-24">
+                <div class="glass-card p-8 rounded-2xl text-center overflow-x-auto">
+                    <h3 class="font-bold text-gray-900 mb-8">Peta Sederhana Ahli Waris</h3>
+
+                    <div class="inline-flex flex-col items-center min-w-[600px]">
+                        <!-- Level 1: Grandparents -->
+                        <div class="flex gap-16 mb-8">
+                            <div class="flex flex-col items-center">
+                                <div
+                                    class="px-4 py-2 bg-orange-100 text-orange-800 rounded-lg border border-orange-200 text-sm font-bold mb-2">
+                                    Kakek (Ayah)</div>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <div
+                                    class="px-4 py-2 bg-orange-100 text-orange-800 rounded-lg border border-orange-200 text-sm font-bold mb-2">
+                                    Nenek (Ibu/Ayah)</div>
+                            </div>
+                        </div>
+
+                        <!-- Connector -->
+                        <div class="h-8 w-px bg-gray-300 mb-2"></div>
+
+                        <!-- Level 2: Parents & Uncles -->
+                        <div class="flex gap-8 mb-8 items-start">
+                            <div class="px-4 py-2 bg-gray-50 text-gray-500 rounded-lg border border-gray-200 text-xs">
+                                Paman/Bibi</div>
+
+                            <div class="flex gap-12 p-4 bg-amber-50 rounded-xl border border-amber-100">
+                                <div
+                                    class="px-4 py-2 bg-amber-100 text-amber-800 rounded-lg border border-amber-200 text-sm font-bold">
+                                    Ayah</div>
+                                <div
+                                    class="px-4 py-2 bg-amber-100 text-amber-800 rounded-lg border border-amber-200 text-sm font-bold">
+                                    Ibu</div>
+                            </div>
+                        </div>
+
+                        <!-- Connector -->
+                        <div class="h-8 w-px bg-gray-300 mb-2"></div>
+
+                        <!-- Level 3: Pewaris & Siblings -->
+                        <div class="flex gap-8 mb-8 items-center">
+                            <div
+                                class="px-4 py-2 bg-purple-100 text-purple-800 rounded-lg border border-purple-200 text-sm">
+                                Saudara</div>
+
+                            <div
+                                class="px-6 py-3 bg-emerald-600 text-white rounded-xl shadow-lg font-bold text-lg relative z-10">
+                                PEWARIS
+                            </div>
+
+                            <div
+                                class="px-4 py-2 bg-emerald-100 text-emerald-800 rounded-lg border border-emerald-200 text-sm">
+                                Pasangan</div>
+                        </div>
+
+                        <!-- Connector -->
+                        <div class="h-8 w-px bg-gray-300 mb-2"></div>
+
+                        <!-- Level 4: Children -->
+                        <div class="flex gap-4 mb-8">
+                            <div
+                                class="px-4 py-2 bg-rose-100 text-rose-800 rounded-lg border border-rose-200 text-sm font-bold">
+                                Anak Laki-laki</div>
+                            <div
+                                class="px-4 py-2 bg-rose-100 text-rose-800 rounded-lg border border-rose-200 text-sm font-bold">
+                                Anak Perempuan</div>
+                        </div>
+
+                        <!-- Connector -->
+                        <div class="h-8 w-px bg-gray-300 mb-2"></div>
+
+                        <!-- Level 5: Grandchildren -->
+                        <div class="flex gap-4">
+                            <div class="px-4 py-2 bg-gray-50 text-gray-600 rounded-lg border border-gray-200 text-xs">
+                                Cucu Laki-laki</div>
+                            <div class="px-4 py-2 bg-gray-50 text-gray-600 rounded-lg border border-gray-200 text-xs">
+                                Cucu Perempuan</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3.10 Latihan Pemahaman -->
+            <section id="latihan" class="scroll-mt-24">
+                <div class="flex items-center gap-4 mb-8">
+                    <div
+                        class="h-10 w-10 flex items-center justify-center rounded-xl bg-emerald-600 text-white font-bold shadow-lg shadow-emerald-600/20">
+                        3.6</div>
+                    <h2 class="text-2xl font-bold text-gray-900">Uji Pemahaman</h2>
+                </div>
+
+                <div class="space-y-4">
+                    <!-- Soal 1 -->
+                    <details class="group bg-white rounded-xl border border-gray-200 overflow-hidden">
+                        <summary
+                            class="flex items-center justify-between p-6 cursor-pointer hover:bg-gray-50 transition-colors">
+                            <span class="font-bold text-gray-800">Soal 1: Identifikasi Ahli Waris</span>
+                            <span class="bg-gray-100 p-2 rounded-full group-open:rotate-180 transition-transform"><i
+                                    class="ph ph-caret-down"></i></span>
+                        </summary>
+                        <div class="px-6 pb-6 pt-0 border-t border-gray-50">
+                            <p class="mt-4 text-gray-600 text-sm mb-4">Kasus: Meninggal meninggalkan Istri, 1 Anak Laki,
+                                2 Anak Pr, Ayah, Ibu, dan 2 Saudara Lk.</p>
+                            <div class="bg-emerald-50 p-4 rounded-lg">
+                                <h4 class="font-bold text-emerald-800 text-sm mb-2">Jawaban:</h4>
+                                <ul class="list-disc list-inside text-sm text-emerald-900 space-y-1">
+                                    <li><strong>Yang Dapat:</strong> Istri (1/8), Ayah (1/6), Ibu (1/6), Anak Lk & Pr
+                                        (Sisa Ashabah).</li>
+                                    <li><strong>Yang Terhalang:</strong> Saudara Lk (terhalang oleh Anak Lk & Ayah).
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </details>
+
+                    <!-- Soal 2 -->
+                    <details class="group bg-white rounded-xl border border-gray-200 overflow-hidden">
+                        <summary
+                            class="flex items-center justify-between p-6 cursor-pointer hover:bg-gray-50 transition-colors">
+                            <span class="font-bold text-gray-800">Soal 2: Tentukan Bagian</span>
+                            <span class="bg-gray-100 p-2 rounded-full group-open:rotate-180 transition-transform"><i
+                                    class="ph ph-caret-down"></i></span>
+                        </summary>
+                        <div class="px-6 pb-6 pt-0 border-t border-gray-50">
+                            <p class="mt-4 text-gray-600 text-sm mb-4">Kasus: Istri, 1 Anak Pr, Ayah, Ibu.</p>
+                            <div class="bg-emerald-50 p-4 rounded-lg">
+                                <h4 class="font-bold text-emerald-800 text-sm mb-2">Jawaban:</h4>
+                                <ul class="list-disc list-inside text-sm text-emerald-900 space-y-1">
+                                    <li>Istri: 1/8 (karena ada anak)</li>
+                                    <li>Anak Pr: 1/2 (sendirian)</li>
+                                    <li>Ibu: 1/6 (karena ada anak)</li>
+                                    <li>Ayah: 1/6 + Sisa (karena anak perempuan)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </details>
+                </div>
+            </section>
+
+            <!-- Navigation Buttons -->
+            <div class="flex justify-between items-center pt-8 border-t border-gray-200">
+                <a href="bab2.html"
+                    class="group flex items-center gap-2 px-6 py-3 rounded-lg font-medium bg-white border border-gray-200 text-gray-600 hover:border-emerald-300 hover:text-emerald-600 transition-all">
+                    <i class="ph ph-arrow-left group-hover:-translate-x-1 transition-transform"></i>
+                    Sebelumnya (Bab 2)
+                </a>
+
+                <button disabled
+                    class="flex items-center gap-3 px-8 py-4 bg-gray-100 text-gray-400 rounded-xl cursor-not-allowed font-bold">
+                    <div class="text-left">
+                        <span class="block text-xs font-medium opacity-80">Bab 4: Hitung Waris</span>
+                        <span>Segera Hadir</span>
+                    </div>
+                </button>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-850 text-gray-300 py-16 border-t border-gray-800">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center gap-2 mb-6">
+                        <span class="text-3xl">☪️</span>
+                        <span class="font-bold text-2xl text-white">Faraidh<span
+                                class="text-emerald-500">Ku</span></span>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed max-w-sm">
+                        Platform edukasi dan kalkulasi waris Islam terpercaya.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-6 uppercase text-xs tracking-widest text-emerald-500">Bab Materi
+                    </h4>
+                    <ul class="space-y-4 text-sm">
+                        <li><a href="bab1.html"
+                                class="hover:text-emerald-400 transition-colors flex items-center gap-2"><i
+                                    class="ph ph-check-circle"></i> Prinsip Dasar</a></li>
+                        <li><a href="bab2.html"
+                                class="hover:text-emerald-400 transition-colors flex items-center gap-2"><i
+                                    class="ph ph-check-circle"></i> Rukun & Syarat</a></li>
+                        <li><a href="bab3.html" class="text-emerald-400 font-medium flex items-center gap-2"><i
+                                    class="ph ph-check-circle"></i> Ahli Waris</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div
+                class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500 gap-4">
+                <p>&copy; 2025 FaraidhKu. Open Source & Non-Profit.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

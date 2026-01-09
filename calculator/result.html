@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hasil Perhitungan - FaraidhKu</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        emerald: {
+                            50: '#ecfdf5',
+                            100: '#d1fae5',
+                            600: '#059669',
+                            800: '#065f46',
+                            900: '#064e3b',
+                        },
+                        gold: {
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Amiri', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .chart-container {
+            position: relative;
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800 font-sans antialiased">
+    <!-- Navbar -->
+    <nav class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <a href="../index.html" class="flex items-center gap-2">
+                    <span class="text-2xl text-emerald-600">☪️</span>
+                    <span class="font-bold text-xl tracking-tight text-gray-900">Faraidh<span
+                            class="text-emerald-600">Ku</span></span>
+                </a>
+                <div class="flex space-x-4">
+                    <a href="../education/index.html" class="text-gray-500 hover:text-emerald-600">Pelajari Faraidh</a>
+                    <a href="index.html" class="text-emerald-600 font-medium">Kalkulator</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-4xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center mb-8">
+            <!-- Back Button -->
+            <a href="index.html" id="backBtn"
+                class="inline-flex items-center text-gray-500 hover:text-emerald-600 transition-colors">
+                <svg class="w-5 h-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                </svg>
+                Kembali ke Form
+            </a>
+
+            <!-- PDF Button -->
+            <button onclick="downloadPDF()"
+                class="inline-flex items-center px-4 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition shadow-sm font-medium text-sm">
+                <svg class="w-4 h-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+                Download PDF
+            </button>
+        </div>
+
+        <div id="resultCard" class="bg-white p-6 sm:p-10 rounded-2xl shadow-lg border border-gray-100">
+            <div class="flex flex-col items-center justify-center mb-10 text-center">
+                <span class="text-sm text-gray-500 uppercase tracking-widest mb-1">Total Harta Warisan</span>
+                <h2 id="displayHarta" class="text-4xl sm:text-5xl font-bold text-gray-900 font-serif">Rp 0</h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-start">
+                <!-- Chart Area -->
+                <div class="flex flex-col items-center">
+                    <div class="chart-container mb-8">
+                        <svg viewBox="0 0 100 100" class="w-full h-full transform -rotate-90">
+                            <circle cx="50" cy="50" r="40" fill="transparent" stroke="#f3f4f6" stroke-width="20" />
+                            <g id="chartSegments"></g>
+                            <text x="50" y="50" text-anchor="middle" dominant-baseline="middle"
+                                class="text-[8px] fill-gray-400 font-bold" transform="rotate(90 50 50)">100%</text>
+                        </svg>
+                    </div>
+                    <div id="chartLegend" class="w-full space-y-3 text-sm"></div>
+                </div>
+
+                <!-- Details List -->
+                <div id="distributionList" class="space-y-4 w-full"></div>
+            </div>
+
+            <div id="notesArea"
+                class="mt-10 p-6 bg-amber-50 border border-amber-100 text-amber-900 rounded-xl text-sm hidden"></div>
+        </div>
+    </main>
+
+    <!-- Use logic.js -->
+    <script src="logic.js?v=6"></script>
+    <script>
+        const CHART_COLORS = [
+            '#059669', '#0d9488', '#0891b2', '#0284c7',
+            '#2563eb', '#4f46e5', '#7c3aed', '#db2777'
+        ];
+
+        // Parse URL Params
+        function getInputsFromURL() {
+            const params = new URLSearchParams(window.location.search);
+            return {
+                harta: parseFloat(params.get('harta')) || 0,
+                gender: params.get('gender') || 'suami',
+                pasangan: params.get('pasangan') === 'true',
+                ayah: params.get('ayah') === 'true',
+                ibu: params.get('ibu') === 'true',
+                anakLaki: parseInt(params.get('anakLaki')) || 0,
+                anakPerempuan: parseInt(params.get('anakPerempuan')) || 0,
+                sdrLaki: parseInt(params.get('sdrLaki')) || 0,
+                sdrPr: parseInt(params.get('sdrPr')) || 0,
+                kakek: params.get('kakek') === 'true',
+                nenekAyah: params.get('nenekAyah') === 'true',
+                nenekIbu: params.get('nenekIbu') === 'true',
+                cucuLaki: parseInt(params.get('cucuLaki')) || 0,
+                cucuPr: parseInt(params.get('cucuPr')) || 0
+            };
+        }
+
+        function drawChart(distribution, totalHarta) {
+            const svg = document.getElementById('chartSegments');
+            const legend = document.getElementById('chartLegend');
+            svg.innerHTML = '';
+            legend.innerHTML = '';
+
+            let accumulatedPercent = 0;
+            const radius = 40;
+            const circumference = 2 * Math.PI * radius;
+
+            distribution.forEach((item, index) => {
+                const percentage = item.value / totalHarta;
+                if (percentage === 0) return;
+
+                const color = CHART_COLORS[index % CHART_COLORS.length];
+                const dashArray = percentage * circumference;
+                const dashOffset = -1 * accumulatedPercent * circumference;
+
+                const circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+                circle.setAttribute("cx", "50");
+                circle.setAttribute("cy", "50");
+                circle.setAttribute("r", radius);
+                circle.setAttribute("fill", "transparent");
+                circle.setAttribute("stroke", color);
+                circle.setAttribute("stroke-width", "20");
+                circle.setAttribute("stroke-dasharray", `${dashArray} ${circumference}`);
+                circle.setAttribute("stroke-dashoffset", dashOffset);
+                svg.appendChild(circle);
+
+                const legendItem = document.createElement('div');
+                legendItem.className = "flex items-center justify-between group p-2 hover:bg-gray-50 rounded-lg transition-colors";
+                legendItem.innerHTML = `
+                    <div class="flex items-center gap-3">
+                        <span class="w-3 h-3 rounded-full" style="background-color: ${color}"></span>
+                        <span class="text-gray-700 font-medium">${item.name}</span>
+                    </div>
+                    <span class="text-gray-900 font-bold">${parseFloat((percentage * 100).toFixed(1))}%</span>
+                `;
+                legend.appendChild(legendItem);
+
+                accumulatedPercent += percentage;
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Fix Back Button Link
+            const backBtn = document.getElementById('backBtn');
+            backBtn.href = 'index.html' + window.location.search;
+
+            const inputs = getInputsFromURL();
+            const result = calculateWarisan(inputs);
+
+            // Display Total
+            document.getElementById('displayHarta').textContent = formatCurrency(result.totalHarta);
+
+            // Render List
+            const list = document.getElementById('distributionList');
+            list.innerHTML = '';
+
+            result.distribution.forEach((item, index) => {
+                const color = CHART_COLORS[index % CHART_COLORS.length];
+                const row = document.createElement('div');
+                row.className = "bg-white border rounded-xl p-4 shadow-sm hover:shadow-md transition-all relative overflow-hidden";
+                row.style.borderLeft = `4px solid ${color}`;
+
+                let detailText = "";
+                if (item.perPerson && (item.name.includes("Anak") || item.name.includes("Saudara") || item.name.includes("Cucu") || item.name.includes("Nenek"))) {
+                    detailText = `<div class="text-xs text-gray-500 mt-1">(${formatCurrency(item.perPerson)} / orang)</div>`;
+                }
+
+                row.innerHTML = `
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <div class="text-xs font-bold uppercase tracking-wider text-gray-400 mb-1">${item.shareText}</div>
+                            <h4 class="font-bold text-gray-800 text-base">${item.name}</h4>
+                            ${detailText}
+                        </div>
+                        <div class="text-right">
+                            <div class="text-lg font-bold text-emerald-700 font-mono tracking-tight">${formatCurrency(item.value)}</div>
+                        </div>
+                    </div>
+                `;
+                list.appendChild(row);
+            });
+
+            // Draw Chart
+            drawChart(result.distribution, inputs.harta);
+
+            // Notes
+            const notes = document.getElementById('notesArea');
+            if (result.notes && result.notes.length > 0) {
+                const notesList = result.notes.map(note => `
+                    <li class="flex items-start gap-3">
+                        <span class="text-amber-500 mt-0.5 text-lg">⚠️</span>
+                        <span class="text-amber-900 leading-relaxed">${note}</span>
+                    </li>
+                `).join('');
+
+                notes.innerHTML = `
+                    <h4 class="font-bold text-amber-800 mb-4 flex items-center gap-2 text-lg">
+                        Catatan Penting
+                    </h4>
+                    <ul class="space-y-3">
+                        ${notesList}
+                    </ul>
+                `;
+                notes.classList.remove('hidden');
+            } else {
+                notes.classList.add('hidden');
+            }
+        });
+
+        // PDF Download Function
+        function downloadPDF() {
+            const element = document.getElementById('resultCard');
+            const svg = element.querySelector('svg');
+
+            if (svg) {
+                // Get exact size
+                const rect = svg.getBoundingClientRect();
+                const width = rect.width;
+                const height = rect.height;
+
+                // Clone SVG to modify for serialization without affecting DOM
+                const cloneSvg = svg.cloneNode(true);
+                cloneSvg.setAttribute('width', width);
+                cloneSvg.setAttribute('height', height);
+
+                // Remove existing styles? No, keep inline styles. 
+                // However, external CSS classes on the SVG contents might be lost in the Blob unless we inline them.
+                // Fortunately our chart uses inline attributes (stroke, fill) for the segments.
+                // The root SVG has tailwind classes. These WON'T effect the Blob content rendering (except width/height which we forced).
+
+                const serializer = new XMLSerializer();
+                const svgString = serializer.serializeToString(cloneSvg);
+                const blob = new Blob([svgString], { type: 'image/svg+xml;charset=utf-8' });
+                const url = URL.createObjectURL(blob);
+
+                const img = new Image();
+                img.onload = () => {
+                    const canvas = document.createElement('canvas');
+                    // High quality scale
+                    const scale = 4;
+                    canvas.width = width * scale;
+                    canvas.height = height * scale;
+                    const ctx = canvas.getContext('2d');
+
+                    // Draw Image
+                    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+                    const pngUrl = canvas.toDataURL('image/png');
+
+                    // Create replacement img
+                    const imgNode = document.createElement('img');
+                    imgNode.src = pngUrl;
+                    imgNode.style.width = '100%';
+                    imgNode.style.height = '100%';
+                    // Preserve layout classes (including rotation)
+                    imgNode.setAttribute('class', svg.getAttribute('class'));
+
+                    // Swap
+                    svg.style.display = 'none';
+                    svg.parentNode.insertBefore(imgNode, svg);
+
+                    const opt = {
+                        margin: 0.5,
+                        filename: 'Hasil-Waris-FaraidhKu.pdf',
+                        image: { type: 'jpeg', quality: 0.98 },
+                        html2canvas: { scale: 2 },
+                        jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+                    };
+
+                    html2pdf().set(opt).from(element).save().then(() => {
+                        // Restore
+                        imgNode.remove();
+                        svg.style.display = '';
+                        URL.revokeObjectURL(url);
+                    });
+                };
+                img.src = url;
+            } else {
+                const opt = {
+                    margin: 0.5,
+                    filename: 'Hasil-Waris-FaraidhKu.pdf',
+                    image: { type: 'jpeg', quality: 0.98 },
+                    html2canvas: { scale: 2 },
+                    jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+                };
+                html2pdf().set(opt).from(element).save();
+            }
+        }
+    </script>
+</body>
+
+</html>

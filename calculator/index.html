@@ -12,40 +12,56 @@
     <script>
         tailwind.config = {
             theme: {
-                extend: { colors: { emerald: { 50: '#ecfdf5', 600: '#059669', 800: '#065f46' } }, fontFamily: { sans: ['Inter', 'sans-serif'], serif: ['Amiri', 'serif'] } }
+                extend: {
+                    colors: {
+                        emerald: {
+                            50: '#ecfdf5',
+                            100: '#d1fae5',
+                            600: '#059669',
+                            800: '#065f46',
+                            900: '#064e3b',
+                        },
+                        gold: {
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Amiri', 'serif'],
+                    }
+                }
             }
         }
     </script>
-    <style>
-        .chart-container {
-            position: relative;
-            width: 200px;
-            height: 200px;
-        }
-    </style>
+
 </head>
 
 <body class="bg-gray-50 text-gray-800 font-sans antialiased">
     <!-- Navbar -->
-    <nav class="bg-white sticky top-0 z-50 border-b border-gray-100 shadow-sm">
-        <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
-            <a href="../index.html" class="flex items-center gap-2">
-                <span class="text-2xl text-emerald-600">☪️</span>
-                <span class="font-bold text-xl tracking-tight text-gray-900">Faraidh<span
-                        class="text-emerald-600">Ku</span></span>
-            </a>
-            <div class="flex space-x-4">
-                <a href="../education/index.html" class="text-gray-500 hover:text-emerald-600">Pelajari Faraidh</a>
-                <a href="#" class="text-emerald-600 font-medium">Kalkulator</a>
+    <nav class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <a href="../index.html" class="flex items-center gap-2">
+                    <span class="text-2xl text-emerald-600">☪️</span>
+                    <span class="font-bold text-xl tracking-tight text-gray-900">Faraidh<span
+                            class="text-emerald-600">Ku</span></span>
+                </a>
+                <div class="flex space-x-4">
+                    <a href="../education/index.html" class="text-gray-500 hover:text-emerald-600">Pelajari Faraidh</a>
+                    <a href="#" class="text-emerald-600 font-medium">Kalkulator</a>
+                </div>
             </div>
         </div>
     </nav>
 
     <main class="max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
-        <div class="grid lg:grid-cols-12 gap-8">
 
+
+        <div class="max-w-2xl mx-auto">
             <!-- Input Form -->
-            <div class="lg:col-span-5 space-y-6">
+            <div class="space-y-6">
                 <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
                     <h2 class="text-xl font-bold text-gray-900 mb-6 flex items-center gap-2">
                         <span class="bg-emerald-100 p-2 rounded-lg text-emerald-700">📝</span> Data Warisan
@@ -81,7 +97,8 @@
                                         placeholder="0" min="0">
                                 </div>
                                 <div>
-                                    <label class="block text-xs font-medium text-gray-500 mb-1">(-) Hutang (Kepada Allah
+                                    <label class="block text-xs font-medium text-gray-500 mb-1">(-) Hutang (Kepada
+                                        Allah
                                         & Manusia)</label>
                                     <input type="number" id="inputHutang"
                                         class="w-full px-3 py-2 rounded border border-gray-300 focus:ring-1 focus:ring-rose-500 font-mono text-sm"
@@ -93,7 +110,8 @@
                                     <input type="number" id="inputWasiat"
                                         class="w-full px-3 py-2 rounded border border-gray-300 focus:ring-1 focus:ring-rose-500 font-mono text-sm"
                                         placeholder="0" min="0">
-                                    <p id="wasiatWarning" class="text-[10px] text-rose-500 mt-1 hidden">Wasiat melebihi
+                                    <p id="wasiatWarning" class="text-[10px] text-rose-500 mt-1 hidden">Wasiat
+                                        melebihi
                                         1/3 dari sisa harta!</p>
                                 </div>
                             </div>
@@ -117,7 +135,8 @@
 
                         <!-- Who Died -->
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-2">Siapa yang Meninggal?</label>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Siapa yang
+                                Meninggal?</label>
                             <div class="grid grid-cols-2 gap-4">
                                 <label class="cursor-pointer">
                                     <input type="radio" name="gender" value="suami" class="peer sr-only" checked>
@@ -138,78 +157,135 @@
 
                         <!-- Heirs -->
                         <div class="space-y-4">
-                            <label class="block text-sm font-medium text-gray-700">Ahli Waris yang Masih Hidup</label>
+                            <label class="block text-sm font-medium text-gray-700">Ahli Waris yang Masih
+                                Hidup</label>
 
-                            <!-- Spouse -->
-                            <label
-                                class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer transition-colors bg-white">
-                                <input type="checkbox" id="pasangan"
-                                    class="w-5 h-5 text-emerald-600 rounded focus:ring-emerald-500" checked>
-                                <span class="ml-3 text-gray-700" id="labelPasangan">Istri (Pasangan)</span>
-                            </label>
-
-                            <!-- Parents -->
-                            <div class="grid grid-cols-2 gap-4">
+                            <!-- Spouse (Pasangan) - Priority 1 -->
+                            <div class="bg-emerald-50 p-4 rounded-lg space-y-2 border border-emerald-100">
+                                <h3 class="text-sm font-bold text-emerald-800 border-b border-emerald-200 pb-2">1.
+                                    Pasangan</h3>
                                 <label
-                                    class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer transition-colors bg-white">
-                                    <input type="checkbox" id=" ayah"
-                                        class="w-5 h-5 text-emerald-600 rounded focus:ring-emerald-500">
-                                    <span class="ml-3 text-gray-700">Ayah</span>
-                                </label>
-                                <label
-                                    class="flex items-center p-3 border rounded-lg hover:bg-gray-50 cursor-pointer transition-colors bg-white">
-                                    <input type="checkbox" id="ibu"
-                                        class="w-5 h-5 text-emerald-600 rounded focus:ring-emerald-500">
-                                    <span class="ml-3 text-gray-700">Ibu</span>
+                                    class="flex items-center p-3 border rounded-lg hover:bg-white cursor-pointer transition-colors bg-white">
+                                    <input type="checkbox" id="pasangan"
+                                        class="w-5 h-5 text-emerald-600 rounded focus:ring-emerald-500" checked>
+                                    <span class="ml-3 text-gray-700" id="labelPasangan">Istri (Pasangan)</span>
                                 </label>
                             </div>
 
-                            <!-- Children -->
-                            <div class="bg-gray-50 p-4 rounded-lg space-y-4 border border-gray-100">
-                                <h3 class="text-sm font-medium text-gray-700 border-b border-gray-200 pb-2">Anak Kandung
-                                </h3>
+                            <!-- Descendants (Anak & Cucu) - Priority 2 -->
+                            <div class="bg-emerald-50 p-4 rounded-lg space-y-4 border border-emerald-100">
+                                <h3 class="text-sm font-bold text-emerald-800 border-b border-emerald-200 pb-2">2.
+                                    Keturunan (Furu')</h3>
+
+                                <!-- Children -->
                                 <div>
                                     <label
-                                        class="block text-xs font-medium text-gray-500 mb-1 uppercase tracking-wide">Anak
-                                        Laki-laki</label>
-                                    <div class="flex items-center gap-3">
-                                        <button type="button" onclick="adjustCount('anakLaki', -1)"
-                                            class="w-8 h-8 rounded-full bg-white border border-gray-300 flex items-center justify-center hover:bg-gray-100 text-gray-600">-</button>
-                                        <input type="number" id="anakLaki" value="0" min="0"
-                                            class="w-16 text-center border-gray-300 rounded-md shadow-sm focus:border-emerald-500 focus:ring-emerald-500"
-                                            readonly>
-                                        <button type="button" onclick="adjustCount('anakLaki', 1)"
-                                            class="w-8 h-8 rounded-full bg-white border border-gray-300 flex items-center justify-center hover:bg-gray-100 text-emerald-600 font-bold">+</button>
+                                        class="block text-xs font-medium text-gray-700 mb-2 uppercase tracking-wide">Anak
+                                        Kandung</label>
+                                    <div class="space-y-3">
+                                        <div>
+                                            <div class="flex justify-between mb-1">
+                                                <span class="text-xs text-gray-600">Anak Laki-laki</span>
+                                            </div>
+                                            <div class="flex items-center gap-3">
+                                                <button type="button" onclick="adjustCount('anakLaki', -1)"
+                                                    class="w-8 h-8 rounded-full bg-white border border-gray-300 flex items-center justify-center hover:bg-gray-100 text-gray-600">-</button>
+                                                <input type="number" id="anakLaki" value="0" min="0"
+                                                    class="w-full text-center border-gray-300 rounded-md shadow-sm focus:border-emerald-500 focus:ring-emerald-500 py-1"
+                                                    readonly>
+                                                <button type="button" onclick="adjustCount('anakLaki', 1)"
+                                                    class="w-8 h-8 rounded-full bg-white border border-gray-300 flex items-center justify-center hover:bg-gray-100 text-emerald-600 font-bold">+</button>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="flex justify-between mb-1">
+                                                <span class="text-xs text-gray-600">Anak Perempuan</span>
+                                            </div>
+                                            <div class="flex items-center gap-3">
+                                                <button type="button" onclick="adjustCount('anakPerempuan', -1)"
+                                                    class="w-8 h-8 rounded-full bg-white border border-gray-300 flex items-center justify-center hover:bg-gray-100 text-gray-600">-</button>
+                                                <input type="number" id="anakPerempuan" value="0" min="0"
+                                                    class="w-full text-center border-gray-300 rounded-md shadow-sm focus:border-emerald-500 focus:ring-emerald-500 py-1"
+                                                    readonly>
+                                                <button type="button" onclick="adjustCount('anakPerempuan', 1)"
+                                                    class="w-8 h-8 rounded-full bg-white border border-gray-300 flex items-center justify-center hover:bg-gray-100 text-emerald-600 font-bold">+</button>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                                <div>
+
+                                <!-- Grandchildren -->
+                                <div class="pt-2 border-t border-emerald-100">
                                     <label
-                                        class="block text-xs font-medium text-gray-500 mb-1 uppercase tracking-wide">Anak
-                                        Perempuan</label>
-                                    <div class="flex items-center gap-3">
-                                        <button type="button" onclick="adjustCount('anakPerempuan', -1)"
-                                            class="w-8 h-8 rounded-full bg-white border border-gray-300 flex items-center justify-center hover:bg-gray-100 text-gray-600">-</button>
-                                        <input type="number" id="anakPerempuan" value="0" min="0"
-                                            class="w-16 text-center border-gray-300 rounded-md shadow-sm focus:border-emerald-500 focus:ring-emerald-500"
-                                            readonly>
-                                        <button type="button" onclick="adjustCount('anakPerempuan', 1)"
-                                            class="w-8 h-8 rounded-full bg-white border border-gray-300 flex items-center justify-center hover:bg-gray-100 text-emerald-600 font-bold">+</button>
+                                        class="block text-xs font-medium text-gray-700 mb-2 uppercase tracking-wide">Cucu
+                                        (Dari Anak Laki-laki)</label>
+                                    <div class="space-y-3">
+                                        <div>
+                                            <div class="flex justify-between mb-1">
+                                                <span class="text-xs text-gray-600">Cucu Laki-laki</span>
+                                            </div>
+                                            <div class="flex items-center gap-3">
+                                                <button type="button" onclick="adjustCount('cucuLaki', -1)"
+                                                    class="w-8 h-8 rounded-full bg-white border border-gray-300 flex items-center justify-center hover:bg-gray-100 text-gray-600">-</button>
+                                                <input type="number" id="cucuLaki" value="0" min="0"
+                                                    class="w-full text-center border-gray-300 rounded-md shadow-sm focus:border-emerald-500 focus:ring-emerald-500 py-1"
+                                                    readonly>
+                                                <button type="button" onclick="adjustCount('cucuLaki', 1)"
+                                                    class="w-8 h-8 rounded-full bg-white border border-gray-300 flex items-center justify-center hover:bg-gray-100 text-emerald-600 font-bold">+</button>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="flex justify-between mb-1">
+                                                <span class="text-xs text-gray-600">Cucu Perempuan</span>
+                                            </div>
+                                            <div class="flex items-center gap-3">
+                                                <button type="button" onclick="adjustCount('cucuPr', -1)"
+                                                    class="w-8 h-8 rounded-full bg-white border border-gray-300 flex items-center justify-center hover:bg-gray-100 text-gray-600">-</button>
+                                                <input type="number" id="cucuPr" value="0" min="0"
+                                                    class="w-full text-center border-gray-300 rounded-md shadow-sm focus:border-emerald-500 focus:ring-emerald-500 py-1"
+                                                    readonly>
+                                                <button type="button" onclick="adjustCount('cucuPr', 1)"
+                                                    class="w-8 h-8 rounded-full bg-white border border-gray-300 flex items-center justify-center hover:bg-gray-100 text-emerald-600 font-bold">+</button>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
 
-                            <!-- Extended Heirs: Ancestors & Descendants -->
+                            <!-- Ascendants (Leluhur) - Priority 3 -->
                             <div class="bg-gray-50 p-4 rounded-lg space-y-4 border border-gray-100">
-                                <h3 class="text-sm font-medium text-gray-700 border-b border-gray-200 pb-2">Keluarga
-                                    Besar (Leluhur & Cucu/Cicit)</h3>
+                                <h3 class="text-sm font-bold text-gray-700 border-b border-gray-200 pb-2">3. Leluhur
+                                    (Ushul)</h3>
 
-                                <!-- Ancestors -->
-                                <div class="space-y-2">
-                                    <label class="block text-xs font-medium text-gray-500 uppercase tracking-wide">Kakek
+                                <!-- Parents -->
+                                <div>
+                                    <label
+                                        class="block text-xs font-medium text-gray-500 mb-2 uppercase tracking-wide">Orang
+                                        Tua</label>
+                                    <div class="grid grid-cols-2 gap-4">
+                                        <label
+                                            class="flex items-center p-3 border rounded-lg hover:bg-white cursor-pointer transition-colors bg-white">
+                                            <input type="checkbox" id=" ayah"
+                                                class="w-5 h-5 text-emerald-600 rounded focus:ring-emerald-500">
+                                            <span class="ml-3 text-gray-700">Ayah</span>
+                                        </label>
+                                        <label
+                                            class="flex items-center p-3 border rounded-lg hover:bg-white cursor-pointer transition-colors bg-white">
+                                            <input type="checkbox" id="ibu"
+                                                class="w-5 h-5 text-emerald-600 rounded focus:ring-emerald-500">
+                                            <span class="ml-3 text-gray-700">Ibu</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <!-- Grandparents -->
+                                <div class="pt-2 border-t border-gray-200">
+                                    <label
+                                        class="block text-xs font-medium text-gray-500 mb-2 uppercase tracking-wide">Kakek
                                         & Nenek</label>
                                     <div class="grid grid-cols-2 gap-3">
                                         <label
-                                            class="flex items-center p-2 bg-white border rounded hover:bg-emerald-50 cursor-pointer">
+                                            class="flex items-center p-2 bg-white border rounded hover:bg-emerald-50 cursor-pointer col-span-2 sm:col-span-1">
                                             <input type="checkbox" id="kakek" class="w-4 h-4 text-emerald-600 rounded">
                                             <div class="ml-2 text-sm leading-tight">
                                                 <span class="block font-medium">Kakek</span>
@@ -236,135 +312,58 @@
                                         </label>
                                     </div>
                                 </div>
-
-                                <!-- Descendants -->
-                                <div class="space-y-2 pt-2">
-                                    <label class="block text-xs font-medium text-gray-500 uppercase tracking-wide">Cucu
-                                        (Dari Anak Laki-laki)</label>
-                                    <div class="grid grid-cols-2 gap-3">
-                                        <div>
-                                            <span class="text-[10px] text-gray-400 mb-1 block">Cucu Laki-laki</span>
-                                            <div class="flex items-center gap-2">
-                                                <button type="button" onclick="adjustCount('cucuLaki', -1)"
-                                                    class="w-6 h-6 rounded bg-white border hover:bg-gray-100 flex items-center justify-center">-</button>
-                                                <input type="number" id="cucuLaki" value="0" min="0"
-                                                    class="w-10 text-center text-sm border-gray-200 rounded" readonly>
-                                                <button type="button" onclick="adjustCount('cucuLaki', 1)"
-                                                    class="w-6 h-6 rounded bg-white border hover:bg-gray-100 flex items-center justify-center text-emerald-600 font-bold">+</button>
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <span class="text-[10px] text-gray-400 mb-1 block">Cucu Perempuan</span>
-                                            <div class="flex items-center gap-2">
-                                                <button type="button" onclick="adjustCount('cucuPr', -1)"
-                                                    class="w-6 h-6 rounded bg-white border hover:bg-gray-100 flex items-center justify-center">-</button>
-                                                <input type="number" id="cucuPr" value="0" min="0"
-                                                    class="w-10 text-center text-sm border-gray-200 rounded" readonly>
-                                                <button type="button" onclick="adjustCount('cucuPr', 1)"
-                                                    class="w-6 h-6 rounded bg-white border hover:bg-gray-100 flex items-center justify-center text-emerald-600 font-bold">+</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
 
                             <!-- Siblings -->
                             <div class="bg-gray-50 p-4 rounded-lg space-y-4 border border-gray-100">
-                                <h3 class="text-sm font-medium text-gray-700 border-b border-gray-200 pb-2">Saudara
-                                    Kandung (Seayah-Seibu)</h3>
-                                <div>
-                                    <label
-                                        class="block text-xs font-medium text-gray-500 mb-1 uppercase tracking-wide">Saudara
-                                        Laki-laki</label>
-                                    <div class="flex items-center gap-3">
-                                        <button type="button" onclick="adjustCount('sdrLaki', -1)"
-                                            class="w-8 h-8 rounded-full bg-white border border-gray-300 flex items-center justify-center hover:bg-gray-100 text-gray-600">-</button>
-                                        <input type="number" id="sdrLaki" value="0" min="0"
-                                            class="w-16 text-center border-gray-300 rounded-md shadow-sm focus:border-emerald-500 focus:ring-emerald-500"
-                                            readonly>
-                                        <button type="button" onclick="adjustCount('sdrLaki', 1)"
-                                            class="w-8 h-8 rounded-full bg-white border border-gray-300 flex items-center justify-center hover:bg-gray-100 text-emerald-600 font-bold">+</button>
+                                <!-- Siblings (Saudara) - Priority 4 -->
+                                <div class="bg-gray-50 p-4 rounded-lg space-y-4 border border-gray-100">
+                                    <h3 class="text-sm font-bold text-gray-700 border-b border-gray-200 pb-2">4.
+                                        Saudara
+                                        (Hawashi)</h3>
+                                    <div>
+                                        <label
+                                            class="block text-xs font-medium text-gray-500 mb-1 uppercase tracking-wide">Saudara
+                                            Laki-laki</label>
+                                        <div class="flex items-center gap-3">
+                                            <button type="button" onclick="adjustCount('sdrLaki', -1)"
+                                                class="w-8 h-8 rounded-full bg-white border border-gray-300 flex items-center justify-center hover:bg-gray-100 text-gray-600">-</button>
+                                            <input type="number" id="sdrLaki" value="0" min="0"
+                                                class="w-16 text-center border-gray-300 rounded-md shadow-sm focus:border-emerald-500 focus:ring-emerald-500"
+                                                readonly>
+                                            <button type="button" onclick="adjustCount('sdrLaki', 1)"
+                                                class="w-8 h-8 rounded-full bg-white border border-gray-300 flex items-center justify-center hover:bg-gray-100 text-emerald-600 font-bold">+</button>
+                                        </div>
                                     </div>
-                                </div>
-                                <div>
-                                    <label
-                                        class="block text-xs font-medium text-gray-500 mb-1 uppercase tracking-wide">Saudara
-                                        Perempuan</label>
-                                    <div class="flex items-center gap-3">
-                                        <button type="button" onclick="adjustCount('sdrPr', -1)"
-                                            class="w-8 h-8 rounded-full bg-white border border-gray-300 flex items-center justify-center hover:bg-gray-100 text-gray-600">-</button>
-                                        <input type="number" id="sdrPr" value="0" min="0"
-                                            class="w-16 text-center border-gray-300 rounded-md shadow-sm focus:border-emerald-500 focus:ring-emerald-500"
-                                            readonly>
-                                        <button type="button" onclick="adjustCount('sdrPr', 1)"
-                                            class="w-8 h-8 rounded-full bg-white border border-gray-300 flex items-center justify-center hover:bg-gray-100 text-emerald-600 font-bold">+</button>
+                                    <div>
+                                        <label
+                                            class="block text-xs font-medium text-gray-500 mb-1 uppercase tracking-wide">Saudara
+                                            Perempuan</label>
+                                        <div class="flex items-center gap-3">
+                                            <button type="button" onclick="adjustCount('sdrPr', -1)"
+                                                class="w-8 h-8 rounded-full bg-white border border-gray-300 flex items-center justify-center hover:bg-gray-100 text-gray-600">-</button>
+                                            <input type="number" id="sdrPr" value="0" min="0"
+                                                class="w-16 text-center border-gray-300 rounded-md shadow-sm focus:border-emerald-500 focus:ring-emerald-500"
+                                                readonly>
+                                            <button type="button" onclick="adjustCount('sdrPr', 1)"
+                                                class="w-8 h-8 rounded-full bg-white border border-gray-300 flex items-center justify-center hover:bg-gray-100 text-emerald-600 font-bold">+</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <button type="submit"
-                            class="w-full py-4 bg-emerald-600 text-white font-bold rounded-xl shadow-lg shadow-emerald-200 hover:bg-emerald-700 transition-all hover:-translate-y-0.5 hover:shadow-xl">
-                            Hitung Pembagian
-                        </button>
+                            <button type="submit"
+                                class="w-full py-4 bg-emerald-600 text-white font-bold rounded-xl shadow-lg shadow-emerald-200 hover:bg-emerald-700 transition-all hover:-translate-y-0.5 hover:shadow-xl">
+                                Hitung Pembagian
+                            </button>
                     </form>
                 </div>
             </div>
 
-            <!-- Results -->
-            <div class="lg:col-span-7">
-                <div id="resultCard" class="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-gray-100 hidden">
-                    <div class="flex flex-col items-center justify-center mb-10 text-center">
-                        <span class="text-sm text-gray-500 uppercase tracking-widest mb-1">Total Harta Warisan</span>
-                        <h2 id="displayHarta" class="text-3xl sm:text-4xl font-bold text-gray-900 font-serif">Rp 0</h2>
-                    </div>
 
-                    <div class="grid md:grid-cols-2 gap-10 items-start">
-                        <!-- Chart Area -->
-                        <div class="flex flex-col items-center">
-                            <div class="chart-container mb-6">
-                                <svg viewBox="0 0 100 100" class="w-full h-full transform -rotate-90">
-                                    <circle cx="50" cy="50" r="40" fill="transparent" stroke="#f3f4f6"
-                                        stroke-width="20" />
-                                    <!-- Dynamic Segments will be injected here -->
-                                    <g id="chartSegments"></g>
-                                    <!-- Center Text -->
-                                    <text x="50" y="50" text-anchor="middle" dominant-baseline="middle"
-                                        class="text-[8px] fill-gray-400 font-bold"
-                                        transform="rotate(90 50 50)">100%</text>
-                                </svg>
-                            </div>
-                            <div id="chartLegend" class="w-full space-y-2 text-sm">
-                                <!-- Legend items -->
-                            </div>
-                        </div>
-
-                        <!-- Details List -->
-                        <div id="distributionList" class="space-y-3 w-full">
-                            <!-- Result Items -->
-                        </div>
-                    </div>
-
-                    <div id="notesArea"
-                        class="mt-8 p-4 bg-amber-50 border border-amber-100 text-amber-900 rounded-lg text-sm hidden">
-                        <!-- Notes -->
-                    </div>
-                </div>
-
-                <!-- Empty State -->
-                <div id="emptyState"
-                    class="bg-white p-12 rounded-2xl shadow-sm border border-gray-100 text-center h-full flex flex-col items-center justify-center text-gray-400 min-h-[500px]">
-                    <div class="w-24 h-24 bg-gray-50 rounded-full flex items-center justify-center mb-6">
-                        <span class="text-4xl text-gray-300">🧮</span>
-                    </div>
-                    <h3 class="text-lg font-medium text-gray-900 mb-2">Belum Ada Hasil</h3>
-                    <p>Masukkan data harta dan ahli waris di sebelah kiri untuk melihat visualisasi pembagian.</p>
-                </div>
-            </div>
-        </div>
     </main>
 
-    <script src="logic.js"></script>
+    <script src="logic.js?v=6"></script>
     <script>
         // Calculate Net Estate (Harta Bersih)
         const inputsCalc = ['inputAset', 'inputJenazah', 'inputHutang', 'inputWasiat'];
@@ -406,9 +405,6 @@
         inputsCalc.forEach(id => {
             document.getElementById(id).addEventListener('input', updateNetEstate);
         });
-
-        // Initial calculation on load
-        document.addEventListener('DOMContentLoaded', updateNetEstate);
 
         // UI Interaction
         window.adjustCount = (id, delta) => {
@@ -483,7 +479,7 @@
                         <span class="w-3 h-3 rounded-full" style="background-color: ${color}"></span>
                         <span class="text-gray-600 text-xs sm:text-sm font-medium truncate max-w-[120px]">${item.name}</span>
                     </div>
-                    <span class="text-gray-900 font-bold text-xs sm:text-sm">${Math.round(percentage * 100)}%</span>
+                    <span class="text-gray-900 font-bold text-xs sm:text-sm">${parseFloat((percentage * 100).toFixed(1))}%</span>
                 `;
                 legend.appendChild(legendItem);
 
@@ -491,9 +487,75 @@
             });
         }
 
-        // Form Submit
+        // Population Logic
+        function populateFormFromURL() {
+            const params = new URLSearchParams(window.location.search);
+            if (!params.has('inputAset')) return; // Check if params exist
+
+            // Helper to set value
+            const setVal = (id, val) => {
+                const el = document.getElementById(id);
+                if (el) el.value = val;
+            };
+            const setCheck = (id, val) => {
+                const el = document.getElementById(id);
+                if (el) el.checked = val === 'true';
+            };
+            const setRadio = (name, val) => {
+                const el = document.querySelector(`input[name="${name}"][value="${val}"]`);
+                if (el) {
+                    el.checked = true;
+                    el.dispatchEvent(new Event('change')); // Trigger change for labels
+                }
+            };
+
+            // Raw Values
+            setVal('inputAset', params.get('inputAset') || '');
+            setVal('inputJenazah', params.get('inputJenazah') || '');
+            setVal('inputHutang', params.get('inputHutang') || '');
+            setVal('inputWasiat', params.get('inputWasiat') || '');
+
+            // Gender
+            setRadio('gender', params.get('gender'));
+
+            // Checkboxes
+            setCheck('pasangan', params.get('pasangan'));
+            setCheck(' ayah', params.get('ayah')); // Note space in ID
+            setCheck('ibu', params.get('ibu'));
+            // Extended Checkboxes
+            setCheck('kakek', params.get('kakek'));
+            setCheck('nenekAyah', params.get('nenekAyah'));
+            setCheck('nenekIbu', params.get('nenekIbu'));
+
+            // Counts
+            setVal('anakLaki', params.get('anakLaki') || 0);
+            setVal('anakPerempuan', params.get('anakPerempuan') || 0);
+            setVal('sdrLaki', params.get('sdrLaki') || 0);
+            setVal('sdrPr', params.get('sdrPr') || 0);
+            setVal('cucuLaki', params.get('cucuLaki') || 0);
+            setVal('cucuPr', params.get('cucuPr') || 0);
+
+            // Update Net Estate Calculation
+            updateNetEstate();
+        }
+
+        // Call on load
+        document.addEventListener('DOMContentLoaded', () => {
+            updateNetEstate(); // Initial zero spec
+            populateFormFromURL(); // Override with params if any
+        });
+
+        // Form Submit - Redirect to Result Page
         document.getElementById('calculatorForm').addEventListener('submit', (e) => {
             e.preventDefault();
+
+            // Get Raw Inputs for Persistance
+            const rawInputs = {
+                inputAset: document.getElementById('inputAset').value,
+                inputJenazah: document.getElementById('inputJenazah').value,
+                inputHutang: document.getElementById('inputHutang').value,
+                inputWasiat: document.getElementById('inputWasiat').value,
+            };
 
             const inputs = {
                 harta: parseFloat(document.getElementById('harta').value) || 0,
@@ -505,7 +567,6 @@
                 anakPerempuan: parseInt(document.getElementById('anakPerempuan').value) || 0,
                 sdrLaki: parseInt(document.getElementById('sdrLaki').value) || 0,
                 sdrPr: parseInt(document.getElementById('sdrPr').value) || 0,
-                // Extended
                 kakek: document.getElementById('kakek').checked,
                 nenekAyah: document.getElementById('nenekAyah').checked,
                 nenekIbu: document.getElementById('nenekIbu').checked,
@@ -513,58 +574,20 @@
                 cucuPr: parseInt(document.getElementById('cucuPr').value) || 0
             };
 
-            const result = calculateWarisan(inputs);
+            // Build Query String
+            const params = new URLSearchParams();
 
-            // Show Cards
-            document.getElementById('emptyState').classList.add('hidden');
-            document.getElementById('resultCard').classList.remove('hidden');
-            document.getElementById('displayHarta').textContent = formatCurrency(result.totalHarta);
-
-            const list = document.getElementById('distributionList');
-            list.innerHTML = '';
-
-            result.distribution.forEach((item, index) => {
-                const color = CHART_COLORS[index % CHART_COLORS.length];
-                const row = document.createElement('div');
-                // Premium Card Style
-                row.className = "bg-white border rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden";
-                row.style.borderLeft = `4px solid ${color}`;
-
-                let detailText = "";
-                if (item.perPerson && (item.name.includes("Anak") || item.name.includes("Saudara") || item.name.includes("Cucu") || item.name.includes("Nenek"))) {
-                    detailText = `<div class="text-xs text-gray-500 mt-1">(${formatCurrency(item.perPerson)} / orang)</div>`;
-                }
-
-                row.innerHTML = `
-                    <div class="flex justify-between items-start">
-                        <div>
-                            <div class="text-xs font-bold uppercase tracking-wider text-gray-400 mb-1">${item.shareText}</div>
-                            <h4 class="font-bold text-gray-800 text-sm sm:text-base">${item.name}</h4>
-                            ${detailText}
-                        </div>
-                        <div class="text-right">
-                            <div class="text-lg font-bold text-emerald-700 font-mono tracking-tight">${formatCurrency(item.value)}</div>
-                        </div>
-                    </div>
-                `;
-                list.appendChild(row);
-            });
-
-            // Draw Chart
-            drawChart(result.distribution, inputs.harta);
-
-            const notes = document.getElementById('notesArea');
-            if (result.note) {
-                notes.innerHTML = `<strong>Catatan:</strong> ${result.note}`;
-                notes.classList.remove('hidden');
-            } else {
-                notes.classList.add('hidden');
+            // Add Raw Inputs
+            for (const key in rawInputs) {
+                params.append(key, rawInputs[key]);
             }
 
-            // Scroll to result
-            if (window.innerWidth < 1024) {
-                document.getElementById('resultCard').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            // Add Logic Inputs
+            for (const key in inputs) {
+                params.append(key, inputs[key]);
             }
+
+            window.location.href = `result.html?${params.toString()}`;
         });
     </script>
     <!-- Footer -->
@@ -578,14 +601,16 @@
                                 class="text-emerald-500">Ku</span></span>
                     </div>
                     <p class="text-gray-400 text-sm leading-relaxed max-w-sm">
-                        Membantu keluarga Muslim membagi warisan dengan adil, transparan, dan sesuai syariat Islam sejak
+                        Membantu keluarga Muslim membagi warisan dengan adil, transparan, dan sesuai syariat Islam
+                        sejak
                         2024.
                     </p>
                 </div>
                 <div>
                     <h4 class="text-white font-bold mb-4 uppercase text-sm tracking-wider">Navigasi</h4>
                     <ul class="space-y-2 text-sm">
-                        <li><a href="../index.html" class="hover:text-emerald-500 transition-colors">Beranda</a></li>
+                        <li><a href="../index.html" class="hover:text-emerald-500 transition-colors">Beranda</a>
+                        </li>
                         <li><a href="../education/index.html" class="hover:text-emerald-500 transition-colors">Materi
                                 Belajar</a></li>
                         <li><a href="#" class="hover:text-emerald-500 transition-colors text-emerald-500">Kalkulator
