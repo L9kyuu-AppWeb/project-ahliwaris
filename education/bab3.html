@@ -506,7 +506,8 @@
                         <div class="bg-gray-50 px-6 py-4 border-b border-gray-100 flex items-center gap-2">
                             <div
                                 class="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center">
-                                <i class="ph ph-user-gear"></i></div>
+                                <i class="ph ph-user-gear"></i>
+                            </div>
                             <h3 class="font-bold text-gray-900">Anak & Cucu Laki-laki (Ashabah)</h3>
                         </div>
                         <div class="grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-gray-100">
@@ -951,22 +952,24 @@
                     Sebelumnya (Bab 2)
                 </a>
 
-                <button disabled
-                    class="flex items-center gap-3 px-8 py-4 bg-gray-100 text-gray-400 rounded-xl cursor-not-allowed font-bold">
+                <a href="bab4.html"
+                    class="group flex items-center gap-3 px-8 py-4 bg-emerald-600 text-white rounded-xl font-bold shadow-lg shadow-emerald-600/20 hover:bg-emerald-700 hover:shadow-emerald-600/30 transition-all hover:-translate-y-1">
                     <div class="text-left">
-                        <span class="block text-xs font-medium opacity-80">Bab 4: Hitung Waris</span>
-                        <span>Segera Hadir</span>
+                        <span class="block text-xs font-medium text-emerald-100">Bab 4: Hitung Waris</span>
+                        <span>Lanjut ke Hitungan <i
+                                class="ph ph-arrow-right inline-block ml-1 group-hover:translate-x-1 transition-transform"></i></span>
                     </div>
-                </button>
+                </a>
             </div>
 
         </div>
     </main>
 
     <!-- Footer -->
-    <footer class="bg-slate-850 text-gray-300 py-16 border-t border-gray-800">
+    <footer class="bg-gray-900 text-gray-300 py-16 border-t border-gray-800">
         <div class="max-w-6xl mx-auto px-4">
             <div class="grid md:grid-cols-4 gap-12 mb-12">
+                <!-- Brand -->
                 <div class="col-span-1 md:col-span-2">
                     <div class="flex items-center gap-2 mb-6">
                         <span class="text-3xl">☪️</span>
@@ -974,27 +977,53 @@
                                 class="text-emerald-500">Ku</span></span>
                     </div>
                     <p class="text-gray-400 text-sm leading-relaxed max-w-sm">
-                        Platform edukasi dan kalkulasi waris Islam terpercaya.
+                        Platform edukasi dan kalkulasi waris Islam terpercaya. Membantu keluarga Muslim membagi warisan
+                        dengan adil, transparan, dan sesuai syariat.
                     </p>
+                    <div class="flex gap-4 mt-6">
+                        <a href="#"
+                            class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center hover:bg-emerald-600 transition-colors text-white"><i
+                                class="ph ph-github-logo"></i></a>
+                        <a href="#"
+                            class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center hover:bg-emerald-600 transition-colors text-white"><i
+                                class="ph ph-envelope"></i></a>
+                    </div>
                 </div>
+
+                <!-- Navigation -->
+                <div>
+                    <h4 class="text-white font-bold mb-6 uppercase text-xs tracking-widest text-emerald-500">Navigasi
+                    </h4>
+                    <ul class="space-y-4 text-sm">
+                        <li><a href="../index.html" class="hover:text-emerald-400 transition-colors">Beranda</a></li>
+                        <li><a href="index.html" class="hover:text-emerald-400 transition-colors">Materi Belajar</a>
+                        </li>
+                        <li><a href="../calculator/index.html"
+                                class="hover:text-emerald-400 transition-colors">Kalkulator Waris</a></li>
+                    </ul>
+                </div>
+
+                <!-- Materials -->
                 <div>
                     <h4 class="text-white font-bold mb-6 uppercase text-xs tracking-widest text-emerald-500">Bab Materi
                     </h4>
                     <ul class="space-y-4 text-sm">
-                        <li><a href="bab1.html"
-                                class="hover:text-emerald-400 transition-colors flex items-center gap-2"><i
-                                    class="ph ph-check-circle"></i> Prinsip Dasar</a></li>
-                        <li><a href="bab2.html"
-                                class="hover:text-emerald-400 transition-colors flex items-center gap-2"><i
-                                    class="ph ph-check-circle"></i> Rukun & Syarat</a></li>
-                        <li><a href="bab3.html" class="text-emerald-400 font-medium flex items-center gap-2"><i
-                                    class="ph ph-check-circle"></i> Ahli Waris</a></li>
+                        <li><a href="bab1.html" class="hover:text-emerald-400 transition-colors">Prinsip Dasar</a></li>
+                        <li><a href="bab2.html" class="hover:text-emerald-400 transition-colors">Rukun & Syarat</a></li>
+                        <li><a href="bab3.html" class="hover:text-emerald-400 transition-colors">Ahli Waris</a></li>
+                        <li><a href="bab4.html" class="hover:text-emerald-400 transition-colors">Hitung Waris</a></li>
                     </ul>
                 </div>
             </div>
+
+            <!-- Bottom -->
             <div
                 class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500 gap-4">
                 <p>&copy; 2025 FaraidhKu. Open Source & Non-Profit.</p>
+                <div class="flex gap-6">
+                    <a href="#" class="hover:text-emerald-400 transition-colors">Privasi</a>
+                    <a href="#" class="hover:text-emerald-400 transition-colors">Tentang Kami</a>
+                </div>
             </div>
         </div>
     </footer>
