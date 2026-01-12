@@ -5,6 +5,8 @@
 ![Status](https://img.shields.io/badge/Status-Active-emerald)
 ![License](https://img.shields.io/badge/License-Open%20Source-blue)
 
+link : https://l9kyuu-appweb.github.io/project-ahliwaris/
+
 ## 🌟 Fitur Utama
 
 ### 1. 📚 Edukasi Faraidh Terstruktur (4 Bab Utama)
